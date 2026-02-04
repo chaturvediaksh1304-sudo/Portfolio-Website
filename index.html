@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Software Engineer</title>
+    <meta name="description" content="Portfolio of a Senior Software Engineer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+              mono: ['"Fira Code"', 'monospace'],
+            },
+            colors: {
+              // Remapped colors for Black/Red theme
+              navy: '#000000', // Main background (black)
+              'light-navy': '#1a0505', // Card background (very dark red/black)
+              'lightest-navy': '#450a0a', // Borders (dark red)
+              slate: '#d4d4d4', // Secondary text (light gray)
+              'light-slate': '#ffffff', // Headings (white)
+              'lightest-slate': '#ffffff', // Brightest white
+              white: '#ffffff',
+              green: '#ff0000', // Accent color (Bright Red)
+            },
+            animation: {
+              'spin-slow': 'spin 8s linear infinite',
+              'spin-slower': 'spin 30s linear infinite',
+              'spin-reverse-slower': 'spin-reverse 30s linear infinite',
+              marquee: 'marquee 25s linear infinite',
+              marquee2: 'marquee2 25s linear infinite',
+              'swing': 'swing 3s ease-in-out infinite',
+              'flicker': 'flicker 4s infinite',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              },
+              marquee2: {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(0%)' },
+              },
+              'spin-reverse': {
+                '0%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(-360deg)' },
+              },
+              swing: {
+                '0%, 100%': { transform: 'rotate(5deg)' },
+                '50%': { transform: 'rotate(-5deg)' },
+              },
+              flicker: {
+                '0%, 100%': { opacity: 1 },
+                '50%': { opacity: 0.3 },
+                '25%': { opacity: 0.8 },
+                '75%': { opacity: 0.2 },
+              }
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      html {
+        scroll-padding-top: 100px; /* Offset for fixed navbar */
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #450a0a;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ff0000;
+      }
+      body {
+        /* Gradient background: Black to Dark Red */
+        background: linear-gradient(to bottom, #000000 0%, #2b0505 50%, #1a0000 100%);
+        color: #d4d4d4;
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.31.0",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
