@@ -25,7 +25,7 @@ export const EXPERIENCE: ExperienceItem[] = [
       'Run user research plus competitor teardown in Google Sheets, then convert insights into PRD priorities.',
       'Collaborate with peers in Slack and support lightweight analysis/automation using Python and SQL.'
     ],
-    tech: ['Product Management', 'Python', 'SQL', 'Canva', 'User Research']
+    tech: ['Product Management', 'Python', 'SQL', 'Canva', 'User Research', 'UI/UX']
   },
   {
     company: 'Central Michigan University',
@@ -41,18 +41,18 @@ export const EXPERIENCE: ExperienceItem[] = [
     tech: ['Python', 'Java', 'C++', 'JavaScript', 'Mentoring']
   },
   {
-    company: 'XSkill',
-    title: 'Lead Full Stack Developer',
-    url: 'https://x-skill-demo.vercel.app',
-    start: 'Aug 2025',
+    company: 'Chartwells at Central Michigan University',
+    title: 'Product & Graphic Intern',
+    url: '#',
+    start: 'Jan 2024',
     end: 'Present',
     description: [
-      'Built XSkill, a full-stack skill-exchange app with a credits-based learning system and 10+ core features.',
-      'Shipped a responsive UI in Next.js 14 + Tailwind CSS, supporting 3 user modes (learner/teacher/swapper).',
-      'Developed Python + FastAPI REST APIs for auth (JWT), matchmaking, scheduling, reviews, and credit transactions.',
-      'Deployed via Supabase (Postgres/Auth/Storage) + Vercel/Render, reducing release time by ~40% with GitLab CI/CD.'
+      'Designed 1,000+ graphics for CMU Dining promotions, menus, events, and social media using Adobe Creative Suite.',
+      'Created PepsiCo-aligned creative assets and followed brand guidelines to ensure consistent, compliant designs.',
+      'Collaborated with marketing and dining teams to plan and deliver campus-wide promotional and branding campaigns.',
+      'Produced static and animated content for screens, menus, events, and social media.'
     ],
-    tech: ['Next.js 14', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Docker']
+    tech: ['UI/UX', 'Figma', 'Adobe XD', 'Photoshop', 'Illustrator', 'InDesign', 'After Effects', 'Premiere Pro', 'Lightroom', 'Audition', 'Framer', 'Dreamweaver' ]
   }
 ];
 
@@ -115,6 +115,7 @@ export const SKILL_LIST = [
   { name: 'Render', icon: Cloud, url: 'https://render.com/' },
   { name: 'Railway', icon: Cloud, url: 'https://railway.app/' },
   // DB & Tools
+  { name: 'Framer', icon: Database, url: 'https://www.framer.com' },
   { name: 'Postgres', icon: Database, url: 'https://www.postgresql.org/' },
   { name: 'MySQL', icon: Database, url: 'https://www.mysql.com/' },
   { name: 'Supabase', icon: Database, url: 'https://supabase.com/' },
