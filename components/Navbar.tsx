@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ onRestart }) => {
         {/* Left Side - Resume */}
         <div className="flex items-center space-x-8">
           <motion.a
-            href="https://drive.google.com/file/d/1ZBkl3XgFNv2ETAc9AvsB6dQBp9uEDAv9/view?usp=sharing"
+            href="https://drive.google.com/file/d/1SCMsrZTcpomLsxay9f4znx4-kEQmlig6/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: -20 }}
