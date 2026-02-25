@@ -80,10 +80,10 @@ export const PROJECTS: ProjectItem[] = [
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop'
   },
   {
-    title: 'CPS 165 Website',
-    description: 'A comprehensive web development course project demonstrating mastery of frontend fundamentals, responsive design principles, and modern web accessibility standards.',
-    tech: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
-    github: 'https://github.com/chaturvediaksh1304-sudo/CPS-165-Website',
+    title: 'Atmos - Smart Thermostat',
+    description: 'Atmos is an immersive iOS experience built with SwiftUI for the Apple Swift Student Challenge 2026, blending real-time data with fluid, high-fidelity animations. It leverages a design-first philosophy to transform complex environmental information into a minimalist and intuitive user interface.',
+    tech: ['SwiftUI', 'Swift', 'MVVM', 'Python', 'FastAPI', 'PyTorch', 'CoreML', 'Adobe Creative Cloud', 'REST API'],
+    github: 'https://github.com/chaturvediaksh1304-sudo/Atmos',
     image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2055&auto=format&fit=crop'
   }
 ];
