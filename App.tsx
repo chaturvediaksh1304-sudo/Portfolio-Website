@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
-import SocialSide, { EmailSide } from './components/SocialSide';
 import Hero from './components/Hero';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
+import Now from './components/Now';
 import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
+import Philosophy from './components/Philosophy';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Loader from './components/Loader';
-import BackgroundLamps from './components/BackgroundLamps';
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
   // Smooth scroll behavior for anchor links
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -21,36 +18,20 @@ function App() {
     };
   }, []);
 
-  const finishLoading = () => {
-    setLoading(false);
-  };
-
-  const handleRestart = () => {
-    setLoading(true);
-  };
-
   return (
-    <div className="min-h-screen text-slate selection:bg-green selection:text-white">
-      {loading ? (
-        <Loader finishLoading={finishLoading} />
-      ) : (
-        <>
-          <BackgroundLamps />
-          <Navbar onRestart={handleRestart} />
-          <SocialSide />
-          <EmailSide />
-          
-          <main className="w-full relative z-10">
-            <Hero />
-            <Skills />
-            <Experience />
-            <Projects />
-            <Contact />
-          </main>
-          
-          <Footer />
-        </>
-      )}
+    <div className="min-h-screen text-slate selection:bg-green selection:text-navy">
+      <Navbar />
+
+      <main className="w-full max-w-4xl mx-auto px-6 md:px-8">
+        <Hero />
+        <Now />
+        <Projects />
+        <Experience />
+        <Skills />
+        <Philosophy />
+        <Contact />
+        <Footer />
+      </main>
     </div>
   );
 }

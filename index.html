@@ -3,91 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Software Engineer</title>
-    <meta name="description" content="Portfolio of a Senior Software Engineer" />
+    <title>Aksh Chaturvedi — Software · Design · Story</title>
+    <meta name="description" content="Aksh Chaturvedi — CS grad building at the intersection of design, code, and story. Software engineering, AI/ML, and product." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Poppins', 'sans-serif'],
-              mono: ['"Fira Code"', 'monospace'],
+              // Matching harshitsuri.com: Geist sans, Newsreader serif accent, Geist Mono.
+              sans: ['Geist', 'Inter', 'system-ui', 'sans-serif'],
+              serif: ['Newsreader', 'Georgia', 'serif'],
+              mono: ['"Geist Mono"', '"JetBrains Mono"', 'ui-monospace', 'monospace'],
             },
             colors: {
-              // Remapped colors for Black/Red theme
-              navy: '#000000', // Main background (black)
-              'light-navy': '#1a0505', // Card background (very dark red/black)
-              'lightest-navy': '#450a0a', // Borders (dark red)
-              slate: '#d4d4d4', // Secondary text (light gray)
-              'light-slate': '#ffffff', // Headings (white)
-              'lightest-slate': '#ffffff', // Brightest white
-              white: '#ffffff',
-              green: '#ff0000', // Accent color (Bright Red)
-            },
-            animation: {
-              'spin-slow': 'spin 8s linear infinite',
-              'spin-slower': 'spin 30s linear infinite',
-              'spin-reverse-slower': 'spin-reverse 30s linear infinite',
-              marquee: 'marquee 25s linear infinite',
-              marquee2: 'marquee2 25s linear infinite',
-              'swing': 'swing 3s ease-in-out infinite',
-              'flicker': 'flicker 4s infinite',
-            },
-            keyframes: {
-              marquee: {
-                '0%': { transform: 'translateX(0%)' },
-                '100%': { transform: 'translateX(-100%)' },
-              },
-              marquee2: {
-                '0%': { transform: 'translateX(100%)' },
-                '100%': { transform: 'translateX(0%)' },
-              },
-              'spin-reverse': {
-                '0%': { transform: 'rotate(0deg)' },
-                '100%': { transform: 'rotate(-360deg)' },
-              },
-              swing: {
-                '0%, 100%': { transform: 'rotate(5deg)' },
-                '50%': { transform: 'rotate(-5deg)' },
-              },
-              flicker: {
-                '0%, 100%': { opacity: 1 },
-                '50%': { opacity: 0.3 },
-                '25%': { opacity: 0.8 },
-                '75%': { opacity: 0.2 },
-              }
+              // Editorial near-black + warm amber. Existing class names kept,
+              // only values changed to avoid touching every component.
+              navy: '#0D0D0D', // --bg (main background)
+              'light-navy': '#151515', // --surface (card background)
+              'lightest-navy': '#262626', // subtle borders
+              slate: '#E8E3DC', // --text (warm off-white body)
+              'light-slate': '#E8E3DC', // headings
+              'lightest-slate': '#FFFFFF', // brightest
+              muted: '#6B6B6B', // --muted (labels, timestamps)
+              white: '#FFFFFF',
+              green: '#D4A853', // accent alias used across components → amber
             },
           },
         },
       }
     </script>
     <style>
+      :root {
+        --bg: #0D0D0D;
+        --surface: #151515;
+        --text: #E8E3DC;
+        --muted: #6B6B6B;
+        --accent: #D4A853;
+        --font-sans: 'Geist', 'Inter', system-ui, sans-serif;
+        --font-serif: 'Newsreader', Georgia, serif;
+        --font-mono: '"Geist Mono", "JetBrains Mono", ui-monospace, monospace';
+        --max-width: 680px;
+      }
       html {
-        scroll-padding-top: 100px; /* Offset for fixed navbar */
+        scroll-padding-top: 80px; /* Offset for slim fixed navbar */
       }
       /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #000000;
+        background: #0D0D0D;
       }
       ::-webkit-scrollbar-thumb {
-        background: #450a0a;
+        background: #262626;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #ff0000;
+        background: #D4A853;
       }
       body {
-        /* Gradient background: Black to Dark Red */
-        background: linear-gradient(to bottom, #000000 0%, #2b0505 50%, #1a0000 100%);
-        color: #d4d4d4;
-        font-family: 'Poppins', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Important words — Newsreader serif italic in warm amber (like harshitsuri.com's "AI-native") */
+      .serif-accent {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 400;
+        color: var(--accent);
       }
     </style>
   <script type="importmap">

@@ -1,21 +1,20 @@
 import React from 'react';
-import { Github } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const toTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="py-8 text-center text-slate text-xs font-mono">
-       <div className="md:hidden flex justify-center space-x-6 mb-6">
-            <a href="https://github.com/chaturvediaksh1304-sudo" className="hover:text-green"><Github size={18}/></a>
-       </div>
-      <a 
-        href="https://github.com/chaturvediaksh1304-sudo" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="hover:text-green transition-colors block mb-2"
-      >
-        Built by Aksh Chaturvedi
-      </a>
-      <p>Built with React & Tailwind CSS</p>
+    <footer className="border-t border-lightest-navy py-6 font-mono text-[12px] text-muted">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <span>© 2026 Aksh Chaturvedi</span>
+        <span className="text-center">Central Michigan University · CS ’26</span>
+        <a href="#" onClick={toTop} className="hover:text-green transition-colors">
+          ↑ back to top
+        </a>
+      </div>
     </footer>
   );
 };

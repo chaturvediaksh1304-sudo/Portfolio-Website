@@ -19,6 +19,7 @@ export interface ExperienceItem {
   end: string;
   description: string[];
   tech: string[];
+  tags?: string[];
 }
 
 export interface ProjectItem {
@@ -27,7 +28,7 @@ export interface ProjectItem {
   tech: string[];
   github?: string;
   external?: string;
-  image: string;
+  image?: string;
 }
 
 export interface SkillCategory {
