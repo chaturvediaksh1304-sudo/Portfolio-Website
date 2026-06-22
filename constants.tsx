@@ -77,6 +77,12 @@ export const PROJECTS: ProjectItem[] = [
     github: 'https://github.com/chaturvediaksh1304-sudo/Atmos'
   },
   {
+    title: 'Hand Tracking Studio',
+    description: 'A browser-based hand-tracking playground — draw neon Cat’s Cradle string art in the air, or finger-spell ASL into text with SignScript. Real-time gesture recognition running entirely client-side, no install.',
+    tech: ['JavaScript', 'MediaPipe', 'TensorFlow.js', 'Handpose', 'Fingerpose', 'HTML5 Canvas'],
+    github: 'https://github.com/chaturvediaksh1304-sudo/hand-tracking-studio'
+  },
+  {
     title: 'College Course Recommendation System',
     description: 'AI-powered recommendation engine improving course-interest alignment by 30%. Inference across 10,000+ academic records with <1.5s backend response time.',
     tech: ['Java', 'Spring Boot', 'JavaFX', 'MySQL', 'Maven', 'REST APIs'],
