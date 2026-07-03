@@ -8,29 +8,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              // Matching harshitsuri.com: Geist sans, Newsreader serif accent, Geist Mono.
-              sans: ['Geist', 'Inter', 'system-ui', 'sans-serif'],
-              serif: ['Newsreader', 'Georgia', 'serif'],
-              mono: ['"Geist Mono"', '"JetBrains Mono"', 'ui-monospace', 'monospace'],
+              // Velorah design system: Instrument Serif display, Inter body, Geist Mono tags.
+              serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['"Geist Mono"', 'ui-monospace', 'monospace'],
             },
             colors: {
-              // Editorial near-black + warm amber. Existing class names kept,
-              // only values changed to avoid touching every component.
-              navy: '#0D0D0D', // --bg (main background)
-              'light-navy': '#151515', // --surface (card background)
-              'lightest-navy': '#262626', // subtle borders
-              slate: '#E8E3DC', // --text (warm off-white body)
-              'light-slate': '#E8E3DC', // headings
-              'lightest-slate': '#FFFFFF', // brightest
-              muted: '#6B6B6B', // --muted (labels, timestamps)
+              // Velorah deep-ocean palette. Class names kept for low churn.
+              navy: 'hsl(201 100% 13%)', // --bg (deep ocean blue)
+              'light-navy': 'hsla(201, 60%, 20%, 0.5)', // translucent panel base
+              'lightest-navy': 'hsla(0, 0%, 100%, 0.14)', // glass borders
+              slate: '#FFFFFF', // primary text
+              'light-slate': '#FFFFFF',
+              'lightest-slate': '#FFFFFF',
+              muted: 'hsl(240 4% 66%)', // secondary text (Velorah gray)
               white: '#FFFFFF',
-              green: '#D4A853', // accent alias used across components → amber
+              green: 'hsl(240 4% 78%)', // accent alias → soft silver
             },
           },
         },
@@ -38,33 +37,17 @@
     </script>
     <style>
       :root {
-        --bg: #0D0D0D;
-        --surface: #151515;
-        --text: #E8E3DC;
-        --muted: #6B6B6B;
-        --accent: #D4A853;
-        --font-sans: 'Geist', 'Inter', system-ui, sans-serif;
-        --font-serif: 'Newsreader', Georgia, serif;
-        --font-mono: '"Geist Mono", "JetBrains Mono", ui-monospace, monospace';
-        --max-width: 680px;
-      }
-      html {
-        scroll-padding-top: 80px; /* Offset for slim fixed navbar */
+        --bg: hsl(201 100% 13%);
+        --text: hsl(0 0% 100%);
+        --muted: hsl(240 4% 66%);
+        --font-serif: 'Instrument Serif', Georgia, serif;
+        --font-sans: 'Inter', system-ui, sans-serif;
       }
       /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0D0D0D;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #262626;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #D4A853;
-      }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: hsl(201 100% 10%); }
+      ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.35); }
       body {
         background: var(--bg);
         color: var(--text);
@@ -73,13 +56,66 @@
         line-height: 1.7;
         -webkit-font-smoothing: antialiased;
       }
-      /* Important words — Newsreader serif italic in warm amber (like harshitsuri.com's "AI-native") */
+      /* Muted serif emphasis inside display headlines (Velorah hero style) */
       .serif-accent {
         font-family: var(--font-serif);
-        font-style: italic;
-        font-weight: 400;
-        color: var(--accent);
+        color: var(--muted);
       }
+      /* Liquid glass — Velorah glassmorphism surface */
+      .liquid-glass {
+        background: rgba(255, 255, 255, 0.01);
+        background-blend-mode: luminosity;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border: none;
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+      .liquid-glass.glass-hover { cursor: pointer; }
+      .liquid-glass.glass-hover:hover { transform: scale(1.03); }
+      .liquid-glass::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1.4px;
+        background: linear-gradient(180deg,
+          rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%,
+          rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+          rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+      /* Heavier glass for content panels — more blur so text stays readable over video */
+      .glass-panel {
+        background: rgba(4, 32, 51, 0.35);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+      .nav-link {
+        font-size: 0.875rem;
+        color: hsl(240 4% 66%);
+        text-decoration: none;
+        background: none;
+        border: none;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+        cursor: pointer;
+        transition: color 0.2s ease;
+      }
+      .nav-link:hover { color: hsl(0 0% 100%); }
+      .nav-link.active { color: hsl(0 0% 100%); }
+      @keyframes fade-rise {
+        from { opacity: 0; transform: translateY(24px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-rise { animation: fade-rise 0.8s ease-out both; }
+      .animate-fade-rise-delay { animation: fade-rise 0.8s ease-out 0.2s both; }
+      .animate-fade-rise-delay-2 { animation: fade-rise 0.8s ease-out 0.4s both; }
     </style>
   <script type="importmap">
 {

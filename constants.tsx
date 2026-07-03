@@ -1,5 +1,8 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
-import { NavItem, SocialLink, ExperienceItem, ProjectItem, SkillCategory } from './types';
+import {
+  NavItem, SocialLink, ExperienceItem, ProjectItem, SkillCategory,
+  VolunteerItem, ReferenceItem, EducationInfo, CourseItem, AchievementItem, CertificationItem,
+} from './types';
 
 // Nav items removed as per request to remove tabs, but keeping type for safety if needed
 export const NAV_ITEMS: NavItem[] = [];
@@ -81,7 +84,8 @@ export const PROJECTS: ProjectItem[] = [
     title: 'News-to-Trade Agent',
     description: 'A multi-agent pipeline that turns S&P 500 news into paper trades — a numeric screener narrows the field, an LLM debate swarm argues each thesis, and trades execute on Alpaca, with every decision written to a public reasoning log and Next.js dashboard.',
     tech: ['Python', 'Multi-Agent LLM', 'Alpaca API', 'Next.js', 'TypeScript'],
-    github: 'https://github.com/chaturvediaksh1304-sudo/news-to-trade-agent'
+    github: 'https://github.com/chaturvediaksh1304-sudo/news-to-trade-agent',
+    external: 'https://news-to-trade-agent.vercel.app'
   },
   {
     title: 'Atmos — Smart Thermostat',
@@ -109,13 +113,85 @@ export const PROJECTS: ProjectItem[] = [
   }
 ];
 
-export const SKILLS: SkillCategory[] = [
+// ——— Education page (sourced from LinkedIn profile + resume) ———
+
+export const EDUCATION: EducationInfo = {
+  school: 'Central Michigan University',
+  degree: 'Bachelor of Science, Computer Science',
+  minor: 'Minor in Multimedia Design',
+  honors: 'Magna Cum Laude',
+  period: 'Class of 2026',
+  location: 'Mount Pleasant, Michigan',
+};
+
+export const VOLUNTEER: VolunteerItem[] = [
   {
-    name: 'Languages',
-    skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'SQL', 'C++', 'Swift', 'HTML', 'CSS']
+    organization: 'CMU Student Government Association',
+    role: 'Director of Media and Public Relations',
+    period: 'Jun 2025 – May 2026',
+    description:
+      'Led media and PR for the student body — campaigns, communications, and community building across campus. A masterclass in leadership, communication, and collaboration.',
   },
   {
-    name: 'Tools',
-    skills: ['Next.js', 'FastAPI', 'React', 'Tailwind CSS', 'Docker', 'AWS', 'PostgreSQL', 'Git', 'Figma', 'Adobe CC']
+    organization: 'Adobe',
+    role: 'Student Ambassador',
+    period: 'Jul 2024 – Present',
+    description:
+      'Represented Adobe on campus — running creative workshops and helping students get the most out of Creative Cloud.',
+  },
+];
+
+export const COURSES: CourseItem[] = [
+  { name: 'ENT 300 — New Venture Creation', detail: 'Validation, data-driven decisions, and the New Venture Challenge (built MANK Studios).' },
+  { name: '[Course name]', detail: '[Placeholder — edit COURSES in constants.tsx with notable coursework.]', placeholder: true },
+  { name: '[Course name]', detail: '[Placeholder — edit COURSES in constants.tsx with notable coursework.]', placeholder: true },
+];
+
+export const ACHIEVEMENTS: AchievementItem[] = [
+  { title: 'Magna Cum Laude', detail: 'Graduated with distinction — B.S. Computer Science, Central Michigan University.' },
+  { title: 'NACUFS Loyal E. Horton Award — Bronze', detail: 'Residential Special Event of the Year: graphics & signage for CMU Dining, three years running.' },
+  { title: 'New Venture Challenge', detail: 'Pitched MANK Studios at CMU’s New Venture Challenge — from ideation to validated launch.' },
+];
+
+export const CERTIFICATIONS: CertificationItem[] = [
+  { name: 'Data Analytics Job Simulation', issuer: 'Deloitte (Forage)' },
+  { name: '[Certification name]', issuer: '[Issuer — placeholder, edit CERTIFICATIONS in constants.tsx.]', placeholder: true },
+];
+
+// PLACEHOLDER CONTENT — replace with real references (with their permission) before sharing publicly.
+export const REFERENCES: ReferenceItem[] = [
+  {
+    name: '[Reference name]',
+    title: '[Their title & organization]',
+    relationship: '[How they know you — e.g. Internship supervisor]',
+    quote: '[A short quote or note from them. This is placeholder text — edit REFERENCES in constants.tsx.]',
+    placeholder: true,
+  },
+  {
+    name: '[Reference name]',
+    title: '[Their title & organization]',
+    relationship: '[How they know you]',
+    quote: '[A short quote or note from them. This is placeholder text — edit REFERENCES in constants.tsx.]',
+    placeholder: true,
+  },
+];
+
+// Skills — sourced from resume (linkedin.com/in/akshchaturvedi)
+export const SKILLS: SkillCategory[] = [
+  {
+    name: 'Engineering',
+    skills: ['Python', 'JavaScript', 'TypeScript', 'Next.js', 'FastAPI', 'REST APIs', 'PostgreSQL', 'Docker', 'AWS']
+  },
+  {
+    name: 'Design',
+    skills: ['Figma', 'Photoshop', 'Illustrator', 'InDesign', 'Premiere Pro', 'Framer', 'Multimedia Design']
+  },
+  {
+    name: 'Marketing',
+    skills: ['SEO', 'Content Strategy', 'Conversion Optimization', 'Data-Driven Strategy', 'Trend Prediction', 'Data Analytics Software']
+  },
+  {
+    name: 'Ways of working',
+    skills: ['Agile', 'Scrum', 'Slack', 'Notion']
   }
 ];

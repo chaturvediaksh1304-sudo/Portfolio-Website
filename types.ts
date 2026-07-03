@@ -35,3 +35,47 @@ export interface SkillCategory {
   name: string;
   skills: string[];
 }
+
+export interface EducationInfo {
+  school: string;
+  degree: string;
+  minor?: string;
+  honors?: string;
+  period: string;
+  location?: string;
+}
+
+export interface CourseItem {
+  name: string;
+  detail?: string;
+  placeholder?: boolean;
+}
+
+export interface AchievementItem {
+  title: string;
+  detail: string;
+  placeholder?: boolean;
+}
+
+export interface CertificationItem {
+  name: string;
+  issuer: string;
+  placeholder?: boolean;
+}
+
+export interface VolunteerItem {
+  organization: string;
+  role: string;
+  period: string;
+  description: string;
+  placeholder?: boolean;
+}
+
+export interface ReferenceItem {
+  name: string;
+  title: string;
+  relationship: string;
+  quote: string;
+  contact?: string;
+  placeholder?: boolean;
+}
