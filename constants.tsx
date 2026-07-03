@@ -78,6 +78,12 @@ export const PROJECTS: ProjectItem[] = [
     external: 'https://vault-scan-beta.vercel.app'
   },
   {
+    title: 'News-to-Trade Agent',
+    description: 'A multi-agent pipeline that turns S&P 500 news into paper trades — a numeric screener narrows the field, an LLM debate swarm argues each thesis, and trades execute on Alpaca, with every decision written to a public reasoning log and Next.js dashboard.',
+    tech: ['Python', 'Multi-Agent LLM', 'Alpaca API', 'Next.js', 'TypeScript'],
+    github: 'https://github.com/chaturvediaksh1304-sudo/news-to-trade-agent'
+  },
+  {
     title: 'Atmos — Smart Thermostat',
     description: 'An immersive iOS experience built for Apple’s Swift Student Challenge 2026. Blends real-time environmental data with fluid animations and an on-device CoreML pipeline — complex data made minimal.',
     tech: ['SwiftUI', 'Swift', 'CoreML', 'PyTorch', 'FastAPI', 'MVVM', 'Adobe Creative Cloud'],
