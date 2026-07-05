@@ -41,6 +41,7 @@ export interface EducationInfo {
   degree: string;
   minor?: string;
   honors?: string;
+  gpa?: string;
   period: string;
   location?: string;
 }
@@ -53,6 +54,8 @@ export interface CourseItem {
 
 export interface AchievementItem {
   title: string;
+  issuer?: string;
+  date?: string;
   detail: string;
   placeholder?: boolean;
 }
@@ -60,6 +63,7 @@ export interface AchievementItem {
 export interface CertificationItem {
   name: string;
   issuer: string;
+  date?: string;
   placeholder?: boolean;
 }
 

@@ -30,18 +30,35 @@ const AboutPage: React.FC = () => {
         The person <em className="not-italic serif-accent">behind the work.</em>
       </h1>
 
-      {/* Bio */}
-      <div className="liquid-glass glass-panel rounded-3xl p-7 md:p-10 mt-16 animate-fade-rise-delay">
-        <p className="text-white/90 text-lg md:text-xl leading-relaxed m-0">
-          I’m Aksh Chaturvedi — a CS grad from Central Michigan University, Adobe Student
-          Ambassador, and co-founder of MANK Studios. I build across design, engineering, and
-          marketing simultaneously: not a pure engineer or a pure designer, but fluent in both.
-        </p>
-        <p className="text-muted text-[15px] leading-relaxed mt-4 m-0">
-          Currently: open to new grad roles in software engineering, AI/ML, marketing, and design
-          at US-based companies. Building HeadcountIQ and Grab while I look — because I can’t not
-          build.
-        </p>
+      {/* Bio — photo (8:11, subject centered) side-by-side with intro */}
+      <div className="liquid-glass glass-panel rounded-3xl p-7 md:p-10 mt-16 animate-fade-rise-delay grid grid-cols-1 md:grid-cols-[minmax(0,300px)_1fr] gap-8 md:gap-10 items-center">
+        <div
+          className="liquid-glass rounded-2xl overflow-hidden w-full max-w-[300px] mx-auto md:mx-0 bg-white/5 relative flex items-center justify-center"
+          style={{ aspectRatio: '8 / 11' }}
+        >
+          {/* Fallback shown until the photo file exists at public/assets/aksh-grad.jpg */}
+          <span className="absolute font-serif text-6xl text-white/25 select-none">AC</span>
+          <img
+            src="/assets/aksh-grad.jpg"
+            alt="Aksh Chaturvedi at his Central Michigan University graduation"
+            className="relative w-full h-full object-cover"
+            style={{ objectPosition: 'center' }}
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+        </div>
+
+        <div>
+          <p className="text-white/90 text-lg md:text-xl leading-relaxed m-0">
+            I’m Aksh Chaturvedi — a CS grad from Central Michigan University, Adobe Student
+            Ambassador, and co-founder of MANK Studios. I build across design, engineering, and
+            marketing simultaneously: not a pure engineer or a pure designer, but fluent in both.
+          </p>
+          <p className="text-muted text-[15px] leading-relaxed mt-4 m-0">
+            Currently: open to new grad roles in software engineering, AI/ML, marketing, and design
+            at US-based companies. Building HeadcountIQ and Grab while I look — because I can’t not
+            build.
+          </p>
+        </div>
       </div>
 
       {/* Philosophy */}

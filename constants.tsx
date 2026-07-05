@@ -120,6 +120,7 @@ export const EDUCATION: EducationInfo = {
   degree: 'Bachelor of Science, Computer Science',
   minor: 'Minor in Multimedia Design',
   honors: 'Magna Cum Laude',
+  gpa: 'GPA 3.86',
   period: 'Class of 2026',
   location: 'Mount Pleasant, Michigan',
 };
@@ -141,21 +142,71 @@ export const VOLUNTEER: VolunteerItem[] = [
   },
 ];
 
+// Curated from the official CMU transcript — the courses most relevant to the work.
 export const COURSES: CourseItem[] = [
-  { name: 'ENT 300 — New Venture Creation', detail: 'Validation, data-driven decisions, and the New Venture Challenge (built MANK Studios).' },
-  { name: '[Course name]', detail: '[Placeholder — edit COURSES in constants.tsx with notable coursework.]', placeholder: true },
-  { name: '[Course name]', detail: '[Placeholder — edit COURSES in constants.tsx with notable coursework.]', placeholder: true },
+  { name: 'Advanced Data Structures & Algorithms', detail: 'CPS 340 · core algorithms and complexity' },
+  { name: 'Computer Design & Architecture', detail: 'CPS 360 · how machines actually run' },
+  { name: 'Introduction to Operating Systems', detail: 'CPS 470 · concurrency, memory, scheduling' },
+  { name: 'Programming Language Concepts', detail: 'CPS 450 · language design and paradigms' },
+  { name: 'Databases and Applications', detail: 'ITC 341 · relational modeling and SQL' },
+  { name: 'Senior Design I & II', detail: 'CPS 410 / CPS 498 · year-long capstone build' },
+  { name: 'Linear Algebra & Matrix Theory', detail: 'MTH 223 · the math behind ML' },
+  { name: 'Elementary Statistical Analysis', detail: 'STA 382 · statistics for data work' },
+  { name: 'Digital Entrepreneurship', detail: 'ENT 300 · validation and go-to-market (MANK Studios)' },
+  { name: 'Advanced Multimedia Design', detail: 'CPS 382 · the design half of the toolkit' },
 ];
 
+// Honors from LinkedIn honors page (Central Michigan University).
 export const ACHIEVEMENTS: AchievementItem[] = [
-  { title: 'Magna Cum Laude', detail: 'Graduated with distinction — B.S. Computer Science, Central Michigan University.' },
-  { title: 'NACUFS Loyal E. Horton Award — Bronze', detail: 'Residential Special Event of the Year: graphics & signage for CMU Dining, three years running.' },
-  { title: 'New Venture Challenge', detail: 'Pitched MANK Studios at CMU’s New Venture Challenge — from ideation to validated launch.' },
+  {
+    title: 'Williams & Koerner Scholarship in Art & Design',
+    issuer: 'CMU · College of the Arts and Media, Dept. of Art & Design',
+    date: 'May 2025',
+    detail: 'Competitive scholarship recognizing academic excellence and creative promise in Art & Design — first preference to Multimedia Design minors.',
+  },
+  {
+    title: 'Roger and Kay Lee Endowed Scholarship in Computer Science',
+    issuer: 'CMU · Department of Computer Science',
+    date: 'Apr 2025',
+    detail: 'Departmental scholarship for a CS major maintaining a 3.5+ GPA, recognizing academic excellence and commitment to the field.',
+  },
+  {
+    title: 'International President’s Award',
+    issuer: 'CMU · Department of Computer Science',
+    date: 'Sep 2022',
+    detail: 'Recognizes strong academic performance, leadership, and dedication to computer science (minimum 3.5 GPA).',
+  },
+  {
+    title: 'Leadership Commitment Award',
+    issuer: 'CMU Student Government Association',
+    detail: 'For unwavering commitment, reliability, and consistent leadership contributing to the SGA’s effectiveness and accountability.',
+  },
 ];
 
+// Full list from LinkedIn licenses & certifications. Education page shows 3, expands for the rest.
 export const CERTIFICATIONS: CertificationItem[] = [
-  { name: 'Data Analytics Job Simulation', issuer: 'Deloitte (Forage)' },
-  { name: '[Certification name]', issuer: '[Issuer — placeholder, edit CERTIFICATIONS in constants.tsx.]', placeholder: true },
+  { name: 'Introduction to Subagents', issuer: 'Anthropic', date: 'Jun 2026' },
+  { name: 'AI Capabilities and Limitations', issuer: 'Anthropic', date: 'Jun 2026' },
+  { name: 'Introduction to Agent Skills', issuer: 'Anthropic', date: 'Jun 2026' },
+  { name: 'Introduction to Model Context Protocol', issuer: 'Anthropic', date: 'Jun 2026' },
+  { name: 'Building with the Claude API', issuer: 'Anthropic', date: 'Jun 2026' },
+  { name: 'Claude Platform 101', issuer: 'Anthropic', date: 'Jun 2026' },
+  { name: 'AI Fluency for Students', issuer: 'Anthropic', date: 'Jun 2026' },
+  { name: 'AI Fluency: Framework & Foundations', issuer: 'Anthropic', date: 'Jun 2026' },
+  { name: 'Claude Code in Action', issuer: 'Anthropic', date: 'Jun 2026' },
+  { name: 'Claude Code 101', issuer: 'Anthropic', date: 'Jun 2026' },
+  { name: 'Claude 101', issuer: 'Anthropic', date: 'May 2026' },
+  { name: 'Deloitte Australia — Data Analytics Job Simulation', issuer: 'Forage', date: 'May 2026' },
+  { name: 'JPMorganChase — Software Engineering Job Simulation', issuer: 'Forage', date: 'Jan 2026' },
+  { name: 'CI/CD with GitLab: Automating DevOps Pipelines', issuer: 'Coursera', date: 'Jan 2026' },
+  { name: 'Python Development with ChatGPT: Fullstack App Development', issuer: 'Coursera', date: 'Dec 2025' },
+  { name: 'Python for Data Science, AI & Development', issuer: 'IBM', date: 'Jan 2026' },
+  { name: 'Programming for Everybody (Getting Started with Python)', issuer: 'University of Michigan', date: 'Dec 2025' },
+  { name: 'Exploring Artificial Intelligence Use Cases and Applications', issuer: 'Amazon Web Services', date: 'Dec 2025' },
+  { name: 'Fundamentals of Machine Learning and Artificial Intelligence', issuer: 'Amazon Web Services', date: 'Dec 2025' },
+  { name: 'Fundamentals of Deep Learning', issuer: 'NVIDIA', date: 'Nov 2025' },
+  { name: 'Aboveboard for Student Leaders', issuer: 'Plaid, LLC', date: 'Jun 2025' },
+  { name: 'Highwire Program', issuer: 'Plaid, LLC', date: 'Jun 2025' },
 ];
 
 // PLACEHOLDER CONTENT — replace with real references (with their permission) before sharing publicly.
