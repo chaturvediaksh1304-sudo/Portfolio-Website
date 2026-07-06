@@ -209,21 +209,22 @@ export const CERTIFICATIONS: CertificationItem[] = [
   { name: 'Highwire Program', issuer: 'Plaid, LLC', date: 'Jun 2025' },
 ];
 
-// PLACEHOLDER CONTENT — replace with real references (with their permission) before sharing publicly.
+// Professional references. Contact details intentionally NOT published here (public repo) —
+// they're available on request. See the note in ReferencesPage.
 export const REFERENCES: ReferenceItem[] = [
   {
-    name: '[Reference name]',
-    title: '[Their title & organization]',
-    relationship: '[How they know you — e.g. Internship supervisor]',
-    quote: '[A short quote or note from them. This is placeholder text — edit REFERENCES in constants.tsx.]',
-    placeholder: true,
+    name: 'Amy Probst',
+    occupation: 'Sr. Marketing Director',
+    organization: 'Chartwells Higher Education',
+    relationship: 'Direct supervisor — CMU Dining Marketing (2+ years)',
+    location: 'Mount Pleasant, Michigan',
   },
   {
-    name: '[Reference name]',
-    title: '[Their title & organization]',
-    relationship: '[How they know you]',
-    quote: '[A short quote or note from them. This is placeholder text — edit REFERENCES in constants.tsx.]',
-    placeholder: true,
+    name: 'Jessica Lee',
+    occupation: 'Marketing Manager',
+    organization: 'Chartwells Higher Education',
+    relationship: 'Supervisor — CMU Dining Marketing',
+    location: 'Mount Pleasant, Michigan',
   },
 ];
 

@@ -77,9 +77,10 @@ export interface VolunteerItem {
 
 export interface ReferenceItem {
   name: string;
-  title: string;
+  occupation: string;
+  organization?: string;
   relationship: string;
-  quote: string;
-  contact?: string;
+  location?: string;
+  quote?: string;
   placeholder?: boolean;
 }
