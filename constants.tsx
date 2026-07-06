@@ -39,6 +39,18 @@ export const EXPERIENCE: ExperienceItem[] = [
     tags: ['AI Tooling', 'Cloud', 'Comms']
   },
   {
+    company: 'Adobe',
+    title: 'Software Engineer Intern',
+    url: '#',
+    start: 'May 2025',
+    end: 'Sep 2025',
+    description: [
+      'Built an end-to-end self-service evaluation system with a frontend UI for Photoshop GenAI image models — automated inference, comparison, and visualization that cut manual workload 90%. Orchestrated a parallelized Jenkins pipeline with multi-threaded inference and AWS S3 I/O (Lambda + DynamoDB for real-time updates), scaling evaluation 10x, and shipped an auto-integration CLI plus a multimodal LLM-judge and CLIP metrics to automate qualitative and quantitative model evaluation.'
+    ],
+    tech: ['Python', 'MLOps', 'Jenkins', 'AWS', 'LLM Judge', 'CLIP'],
+    tags: ['ML Infra', 'GenAI', 'Evaluation']
+  },
+  {
     company: 'Central Michigan University',
     title: 'Undergraduate Teaching Assistant',
     url: '#',
