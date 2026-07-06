@@ -27,6 +27,18 @@ export const EXPERIENCE: ExperienceItem[] = [
     tags: ['Design', 'Brand', 'Marketing']
   },
   {
+    company: 'Adobe',
+    title: 'Student Ambassador',
+    url: '#',
+    start: 'Jul 2024',
+    end: 'Present',
+    description: [
+      'Built workflow-automation scripts with generative AI tooling (Claude, Copilot, Adobe Firefly) and analyzed API-integration latency and reliability gaps across distributed cloud pipelines through structured log analysis. Communicated technical findings to mixed audiences across 15+ workshops with 500+ attendees.'
+    ],
+    tech: ['Generative AI', 'Claude', 'Copilot', 'Adobe Firefly', 'Log Analysis'],
+    tags: ['AI Tooling', 'Cloud', 'Comms']
+  },
+  {
     company: 'Central Michigan University',
     title: 'Undergraduate Teaching Assistant',
     url: '#',
@@ -37,6 +49,18 @@ export const EXPERIENCE: ExperienceItem[] = [
     ],
     tech: ['Python', 'Java', 'C++', 'JavaScript', 'Mentoring'],
     tags: ['Teaching', 'CS', 'Mentorship']
+  },
+  {
+    company: 'MANK Studios',
+    title: 'Co-founder & Lead Engineer',
+    url: '#',
+    start: 'Nov 2025',
+    end: 'Present',
+    description: [
+      'Architected and own production agentic pipelines end-to-end on Linux — Python fault-detection and retry logic that catches and classifies failure modes live. Used Claude and LLM APIs to redesign internal engineering workflows, and containerized the full stack with Docker + automated CI/CD, cutting deployment errors ~50%.'
+    ],
+    tech: ['Python', 'LLM APIs', 'Docker', 'CI/CD', 'Linux'],
+    tags: ['Agentic AI', 'DevOps', 'Founder']
   },
   {
     company: 'BeReal',
