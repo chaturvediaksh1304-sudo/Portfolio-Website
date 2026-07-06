@@ -15,11 +15,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const EXPERIENCE: ExperienceItem[] = [
   {
-    company: 'Chartwells',
+    company: 'Chartwells Higher Ed — CMU Dining',
     title: 'Product & Graphic Intern',
     url: '#',
     start: 'Jan 2024',
-    end: 'Present',
+    end: 'May 2026',
     description: [
       'Designed 1,000+ graphics across CMU Dining — menus, events, social, and digital screens — and produced PepsiCo-aligned brand assets to partner standards, working cross-functionally with marketing and operations.'
     ],
@@ -31,7 +31,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     title: 'Undergraduate Teaching Assistant',
     url: '#',
     start: 'Aug 2025',
-    end: 'Present',
+    end: 'May 2026',
     description: [
       'Supported 100+ students per semester in Python, Java, C++, and JavaScript, and cut recurring errors ~30% through structured debugging sessions.'
     ],
@@ -43,7 +43,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     title: 'Product Management Extern',
     url: '#',
     start: 'Jan 2026',
-    end: 'Present',
+    end: 'March 2026',
     description: [
       'Built a clickable Canva prototype for a Gen Z social feature, ran user research and a competitor teardown into PRD priorities, and used Python + SQL for lightweight analysis.'
     ],
