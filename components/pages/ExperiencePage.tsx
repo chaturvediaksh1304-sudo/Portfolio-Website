@@ -52,15 +52,15 @@ const ExperiencePage: React.FC = () => {
         ))}
       </div>
 
-      {/* Skills — glass panel */}
-      <div className="liquid-glass glass-panel rounded-3xl p-7 md:p-9 mt-6 animate-fade-rise-delay-2">
-        <h3 className="font-serif text-3xl text-white m-0 mb-5">Skills</h3>
+      {/* Skills — white panel with dark text */}
+      <div className="bg-white rounded-3xl p-7 md:p-9 mt-6 shadow-xl shadow-black/20 animate-fade-rise-delay-2">
+        <h3 className="font-serif text-3xl text-navy m-0 mb-5 text-center">Skills</h3>
         {SKILLS.map((cat) => (
           <div key={cat.name} className="flex flex-col sm:flex-row sm:gap-6 mb-3">
-            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted shrink-0 w-28 pt-1">
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-navy/50 shrink-0 w-28 pt-1">
               {cat.name}
             </span>
-            <p className="text-white/90 text-[15px] m-0">{cat.skills.join(' · ')}</p>
+            <p className="text-navy/90 text-[15px] m-0">{cat.skills.join(' · ')}</p>
           </div>
         ))}
       </div>
