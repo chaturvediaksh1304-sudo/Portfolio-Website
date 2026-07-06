@@ -53,7 +53,7 @@ const ExperiencePage: React.FC = () => {
       </div>
 
       {/* Skills — white panel with dark text */}
-      <div className="bg-white rounded-3xl p-7 md:p-9 mt-6 shadow-xl shadow-black/20 animate-fade-rise-delay-2">
+      <div className="bg-white/90 rounded-3xl p-7 md:p-9 mt-6 shadow-xl shadow-black/20 animate-fade-rise-delay-2">
         <h3 className="font-serif text-3xl text-navy m-0 mb-5 text-center">Skills</h3>
         {SKILLS.map((cat) => (
           <div key={cat.name} className="flex flex-col sm:flex-row sm:gap-6 mb-3">
