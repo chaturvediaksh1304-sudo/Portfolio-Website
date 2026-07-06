@@ -28,18 +28,6 @@ export const EXPERIENCE: ExperienceItem[] = [
   },
   {
     company: 'Adobe',
-    title: 'Student Ambassador',
-    url: '#',
-    start: 'Jul 2024',
-    end: 'Present',
-    description: [
-      'Built workflow-automation scripts with generative AI tooling (Claude, Copilot, Adobe Firefly) and analyzed API-integration latency and reliability gaps across distributed cloud pipelines through structured log analysis. Communicated technical findings to mixed audiences across 15+ workshops with 500+ attendees.'
-    ],
-    tech: ['Generative AI', 'Claude', 'Copilot', 'Adobe Firefly', 'Log Analysis'],
-    tags: ['AI Tooling', 'Cloud', 'Comms']
-  },
-  {
-    company: 'Adobe',
     title: 'Software Engineer Intern',
     url: '#',
     start: 'May 2025',

@@ -67,12 +67,12 @@ const AboutPage: React.FC = () => {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {PRINCIPLES.map((p, i) => (
-          <div key={i} className="liquid-glass glass-panel rounded-3xl p-7 animate-fade-rise-delay">
-            <span className="font-mono text-[12px] text-muted">
+          <div key={i} className="bg-white/90 shadow-xl shadow-black/20 rounded-3xl p-7 animate-fade-rise-delay">
+            <span className="font-mono text-[12px] text-navy/50">
               — {String(i + 1).padStart(2, '0')}
             </span>
-            <h3 className="font-serif text-2xl text-white mt-3 mb-2 m-0">{p.title}</h3>
-            <p className="text-muted text-sm leading-relaxed m-0">{p.body}</p>
+            <h3 className="font-serif text-2xl text-navy mt-3 mb-2 m-0">{p.title}</h3>
+            <p className="text-navy/70 text-sm leading-relaxed m-0">{p.body}</p>
           </div>
         ))}
       </div>

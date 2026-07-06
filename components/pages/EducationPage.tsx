@@ -5,6 +5,9 @@ import {
 
 const CERTS_PREVIEW = 3;
 
+// White panel matching the Skills box: 90% white, dark navy text.
+const CARD = 'bg-white/90 shadow-xl shadow-black/20';
+
 const SectionLabel: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted text-center mt-16 mb-8">
     {children}
@@ -30,26 +33,26 @@ const EducationPage: React.FC = () => {
 
       {/* College */}
       <SectionLabel>College</SectionLabel>
-      <div className="liquid-glass glass-panel rounded-3xl p-7 md:p-10 text-center animate-fade-rise-delay">
-        <h2 className="font-serif text-3xl md:text-5xl text-white m-0">{EDUCATION.school}</h2>
-        <p className="text-white/90 text-lg mt-3 m-0">{EDUCATION.degree}</p>
-        {EDUCATION.minor && <p className="text-muted text-[15px] mt-1 m-0">{EDUCATION.minor}</p>}
+      <div className={`${CARD} rounded-3xl p-7 md:p-10 text-center animate-fade-rise-delay`}>
+        <h2 className="font-serif text-3xl md:text-5xl text-navy m-0">{EDUCATION.school}</h2>
+        <p className="text-navy/90 text-lg mt-3 m-0">{EDUCATION.degree}</p>
+        {EDUCATION.minor && <p className="text-navy/60 text-[15px] mt-1 m-0">{EDUCATION.minor}</p>}
         <div className="flex flex-wrap items-center justify-center gap-2 mt-5">
           {EDUCATION.honors && (
-            <span className="liquid-glass rounded-full px-4 py-1.5 font-mono text-[11px] uppercase tracking-wider text-white">
+            <span className="rounded-full px-4 py-1.5 font-mono text-[11px] uppercase tracking-wider bg-navy/10 border border-navy/20 text-navy font-medium">
               {EDUCATION.honors}
             </span>
           )}
           {EDUCATION.gpa && (
-            <span className="liquid-glass rounded-full px-4 py-1.5 font-mono text-[11px] uppercase tracking-wider text-white">
+            <span className="rounded-full px-4 py-1.5 font-mono text-[11px] uppercase tracking-wider bg-navy/10 border border-navy/20 text-navy font-medium">
               {EDUCATION.gpa}
             </span>
           )}
-          <span className="liquid-glass rounded-full px-4 py-1.5 font-mono text-[11px] uppercase tracking-wider text-muted">
+          <span className="rounded-full px-4 py-1.5 font-mono text-[11px] uppercase tracking-wider border border-navy/15 text-navy/60">
             {EDUCATION.period}
           </span>
           {EDUCATION.location && (
-            <span className="liquid-glass rounded-full px-4 py-1.5 font-mono text-[11px] uppercase tracking-wider text-muted">
+            <span className="rounded-full px-4 py-1.5 font-mono text-[11px] uppercase tracking-wider border border-navy/15 text-navy/60">
               {EDUCATION.location}
             </span>
           )}
@@ -62,18 +65,18 @@ const EducationPage: React.FC = () => {
         {VOLUNTEER.map((item, i) => (
           <div
             key={i}
-            className={`liquid-glass glass-panel rounded-3xl p-7 md:p-8 animate-fade-rise-delay ${
+            className={`${CARD} rounded-3xl p-7 md:p-8 animate-fade-rise-delay ${
               item.placeholder ? 'opacity-70' : ''
             }`}
           >
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted m-0 mb-2">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-navy/50 m-0 mb-2">
               {item.role}
             </p>
-            <h3 className="font-serif text-2xl md:text-3xl text-white m-0 mb-1">
+            <h3 className="font-serif text-2xl md:text-3xl text-navy m-0 mb-1">
               {item.organization}
             </h3>
-            <span className="font-mono text-xs text-muted">{item.period}</span>
-            <p className="text-muted text-[15px] leading-relaxed mt-4 m-0">{item.description}</p>
+            <span className="font-mono text-xs text-navy/50">{item.period}</span>
+            <p className="text-navy/70 text-[15px] leading-relaxed mt-4 m-0">{item.description}</p>
           </div>
         ))}
       </div>
@@ -84,12 +87,12 @@ const EducationPage: React.FC = () => {
         {COURSES.map((course, i) => (
           <div
             key={i}
-            className={`liquid-glass glass-panel rounded-2xl px-6 py-5 animate-fade-rise-delay ${
+            className={`${CARD} rounded-2xl px-6 py-5 animate-fade-rise-delay ${
               course.placeholder ? 'opacity-60' : ''
             }`}
           >
-            <p className="text-white text-[15px] font-medium m-0">{course.name}</p>
-            {course.detail && <p className="text-muted text-sm m-0 mt-1">{course.detail}</p>}
+            <p className="text-navy text-[15px] font-medium m-0">{course.name}</p>
+            {course.detail && <p className="text-navy/60 text-sm m-0 mt-1">{course.detail}</p>}
           </div>
         ))}
       </div>
@@ -100,23 +103,23 @@ const EducationPage: React.FC = () => {
         {ACHIEVEMENTS.map((a, i) => (
           <div
             key={i}
-            className={`liquid-glass glass-panel rounded-3xl p-7 animate-fade-rise-delay ${
+            className={`${CARD} rounded-3xl p-7 animate-fade-rise-delay ${
               a.placeholder ? 'opacity-60' : ''
             }`}
           >
             <div className="flex items-start justify-between gap-3">
-              <span className="font-mono text-[12px] text-muted">
+              <span className="font-mono text-[12px] text-navy/50">
                 — {String(i + 1).padStart(2, '0')}
               </span>
-              {a.date && <span className="font-mono text-[11px] text-muted">{a.date}</span>}
+              {a.date && <span className="font-mono text-[11px] text-navy/50">{a.date}</span>}
             </div>
-            <h3 className="font-serif text-xl text-white mt-3 mb-1 m-0 leading-tight">{a.title}</h3>
+            <h3 className="font-serif text-xl text-navy mt-3 mb-1 m-0 leading-tight">{a.title}</h3>
             {a.issuer && (
-              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted m-0 mb-3">
+              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-navy/50 m-0 mb-3">
                 {a.issuer}
               </p>
             )}
-            <p className="text-muted text-sm leading-relaxed m-0">{a.detail}</p>
+            <p className="text-navy/70 text-sm leading-relaxed m-0">{a.detail}</p>
           </div>
         ))}
       </div>
@@ -127,14 +130,14 @@ const EducationPage: React.FC = () => {
         {visibleCerts.map((cert, i) => (
           <div
             key={i}
-            className={`liquid-glass glass-panel rounded-2xl px-6 py-5 animate-fade-rise-delay ${
+            className={`${CARD} rounded-2xl px-6 py-5 animate-fade-rise-delay ${
               cert.placeholder ? 'opacity-60' : ''
             }`}
           >
-            <p className="text-white text-[15px] font-medium m-0">{cert.name}</p>
-            <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted m-0 mt-1.5">
+            <p className="text-navy text-[15px] font-medium m-0">{cert.name}</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-navy/50 m-0 mt-1.5">
               {cert.issuer}
-              {cert.date && <span className="text-muted/70"> · {cert.date}</span>}
+              {cert.date && <span className="text-navy/40"> · {cert.date}</span>}
             </p>
           </div>
         ))}
