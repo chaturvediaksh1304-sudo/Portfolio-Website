@@ -81,6 +81,7 @@ export interface ReferenceItem {
   organization?: string;
   relationship: string;
   location?: string;
+  email?: string;
   quote?: string;
   placeholder?: boolean;
 }

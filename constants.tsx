@@ -209,8 +209,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
   { name: 'Highwire Program', issuer: 'Plaid, LLC', date: 'Jun 2025' },
 ];
 
-// Professional references. Contact details intentionally NOT published here (public repo) —
-// they're available on request. See the note in ReferencesPage.
+// Professional & academic references. Work/university emails only (no personal phone numbers).
 export const REFERENCES: ReferenceItem[] = [
   {
     name: 'Amy Probst',
@@ -218,6 +217,7 @@ export const REFERENCES: ReferenceItem[] = [
     organization: 'Chartwells Higher Education',
     relationship: 'Direct supervisor — CMU Dining Marketing (2+ years)',
     location: 'Mount Pleasant, Michigan',
+    email: 'amy.probst@compass-usa.com',
   },
   {
     name: 'Jessica Lee',
@@ -225,6 +225,39 @@ export const REFERENCES: ReferenceItem[] = [
     organization: 'Chartwells Higher Education',
     relationship: 'Supervisor — CMU Dining Marketing',
     location: 'Mount Pleasant, Michigan',
+    email: 'jessica.lee@compass-usa.com',
+  },
+  {
+    name: 'Dr. Patrick G. Kinnicutt',
+    occupation: 'Chairperson, Computer Science',
+    organization: 'Central Michigan University',
+    relationship: 'Senior Design advisor · CS Department Chair',
+    location: 'Mount Pleasant, Michigan',
+    email: 'kinni1p@cmich.edu',
+  },
+  {
+    name: 'Dr. John Gustincic',
+    occupation: 'Faculty, Entrepreneurship',
+    organization: 'Central Michigan University',
+    relationship: 'Entrepreneurship professor · New Venture Challenge mentor',
+    location: 'Mount Pleasant, Michigan',
+    email: 'gusti1j@cmich.edu',
+  },
+  {
+    name: 'Dr. Dylan Kelly',
+    occupation: 'Faculty, Computer Science',
+    organization: 'Central Michigan University',
+    relationship: 'CS professor · data structures, Python & multimedia',
+    location: 'Mount Pleasant, Michigan',
+    email: 'kelly1dg@cmich.edu',
+  },
+  {
+    name: 'Howard Haines',
+    occupation: 'Faculty, Entrepreneurship',
+    organization: 'Central Michigan University',
+    relationship: 'Entrepreneurship professor · ENT 300',
+    location: 'Mount Pleasant, Michigan',
+    email: 'haine1h@cmich.edu',
   },
 ];
 

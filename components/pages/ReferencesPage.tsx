@@ -1,4 +1,5 @@
 import React from 'react';
+import { Mail } from 'lucide-react';
 import { REFERENCES } from '../../constants';
 
 const ReferencesPage: React.FC = () => {
@@ -20,9 +21,21 @@ const ReferencesPage: React.FC = () => {
             key={i}
             className="liquid-glass glass-panel rounded-3xl p-7 md:p-8 flex flex-col animate-fade-rise-delay"
           >
-            <span className="font-mono text-[12px] text-muted">
-              — {String(i + 1).padStart(2, '0')}
-            </span>
+            <div className="flex items-start justify-between gap-3">
+              <span className="font-mono text-[12px] text-muted">
+                — {String(i + 1).padStart(2, '0')}
+              </span>
+              {ref.email && (
+                <a
+                  href={`mailto:${ref.email}`}
+                  aria-label={`Email ${ref.name}`}
+                  title={`Email ${ref.name}`}
+                  className="liquid-glass glass-hover rounded-full p-2.5 bg-white/15 text-white flex shrink-0"
+                >
+                  <Mail size={16} />
+                </a>
+              )}
+            </div>
             <h3 className="font-serif text-2xl md:text-3xl text-white mt-3 mb-1 m-0">{ref.name}</h3>
             <p className="text-white/90 text-[15px] m-0">
               {ref.occupation}
@@ -42,14 +55,7 @@ const ReferencesPage: React.FC = () => {
       </div>
 
       <p className="text-center text-muted text-sm mt-10">
-        Full contact details available on request —{' '}
-        <a
-          href="mailto:chaturvedi.aksh1304@gmail.com"
-          className="text-white hover:text-muted transition-colors"
-        >
-          just reach out
-        </a>
-        .
+        Tap the mail icon on any card to reach them directly.
       </p>
     </section>
   );
