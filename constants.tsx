@@ -134,6 +134,12 @@ export const PROJECTS: ProjectItem[] = [
     description: 'Distributed AI agent achieving 80%+ task completion accuracy. Scaled to 1,000+ concurrent tasks with 99% uptime using prompt orchestration and containerized infrastructure.',
     tech: ['Python', 'LLM APIs', 'FastAPI', 'Docker', 'CI/CD'],
     github: 'https://github.com/chaturvediaksh1304-sudo/AI-Agent'
+  },
+  {
+    title: '500+ AI Agent Projects (curated)',
+    description: 'A curated community collection of 500+ AI-agent projects and use cases spanning every major framework (LangGraph, CrewAI, AutoGen, Agno) and industry — a reference I keep for building and evaluating agents. Original collection by ashishpatel26.',
+    tech: ['LangGraph', 'CrewAI', 'AutoGen', 'Agno', 'Python', 'Curated Resource'],
+    github: 'https://github.com/chaturvediaksh1304-sudo/500-AI-Agents-Projects'
   }
 ];
 
