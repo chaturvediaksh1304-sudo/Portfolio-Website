@@ -1,4 +1,11 @@
+import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
+
+const XIcon = ({ size = 24 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 import {
   NavItem, SocialLink, ExperienceItem, ProjectItem, SkillCategory,
   VolunteerItem, ReferenceItem, EducationInfo, CourseItem, AchievementItem, CertificationItem,
@@ -10,6 +17,7 @@ export const NAV_ITEMS: NavItem[] = [];
 export const SOCIAL_LINKS: SocialLink[] = [
   { name: 'GitHub', url: 'https://github.com/chaturvediaksh1304-sudo', icon: Github },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/aksh-chaturvedi/', icon: Linkedin },
+  { name: 'X', url: 'https://x.com/aksh_chaturvedi', icon: XIcon },
   { name: 'Email', url: 'mailto:chaturvedi.aksh1304@gmail.com', icon: Mail },
 ];
 
