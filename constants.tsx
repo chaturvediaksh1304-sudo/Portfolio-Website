@@ -297,6 +297,14 @@ export const REFERENCES: ReferenceItem[] = [
     location: 'Mount Pleasant, Michigan',
     email: 'haine1h@cmich.edu',
   },
+  {
+    name: 'Gary Lane',
+    occupation: 'Technology Manager II',
+    organization: 'CMU · OIT — Academic Computing',
+    relationship: 'Professional reference',
+    location: 'Mount Pleasant, Michigan',
+    email: 'lane1ga@cmich.edu',
+  },
 ];
 
 // Skills — sourced from resume (linkedin.com/in/akshchaturvedi)
