@@ -311,6 +311,7 @@ export const REFERENCES: ReferenceItem[] = [
     organization: 'Chartwells Higher Education',
     relationship: 'Regional marketing leadership — Chartwells',
     location: 'Brooklyn, New York',
+    email: 'kern.clarke@compass-usa.com',
   },
 ];
 
