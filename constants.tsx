@@ -305,6 +305,13 @@ export const REFERENCES: ReferenceItem[] = [
     location: 'Mount Pleasant, Michigan',
     email: 'lane1ga@cmich.edu',
   },
+  {
+    name: 'Kern Clarke',
+    occupation: 'Regional Marketing Director',
+    organization: 'Chartwells Higher Education',
+    relationship: 'Regional marketing leadership — Chartwells',
+    location: 'Brooklyn, New York',
+  },
 ];
 
 // Skills — sourced from resume (linkedin.com/in/akshchaturvedi)
