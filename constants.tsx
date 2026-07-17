@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
 
 const XIcon = ({ size = 24 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -18,6 +18,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { name: 'GitHub', url: 'https://github.com/chaturvediaksh1304-sudo', icon: Github },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/aksh-chaturvedi/', icon: Linkedin },
   { name: 'X', url: 'https://x.com/aksh_chaturvedi', icon: XIcon },
+  { name: 'Instagram', url: 'https://www.instagram.com/_47_aksh_/', icon: Instagram },
   { name: 'Email', url: 'mailto:chaturvedi.aksh1304@gmail.com', icon: Mail },
 ];
 
