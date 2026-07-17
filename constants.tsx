@@ -145,6 +145,12 @@ export const PROJECTS: ProjectItem[] = [
     github: 'https://github.com/chaturvediaksh1304-sudo/AI-Agent'
   },
   {
+    title: 'Pirate — Invisible AI Overlay',
+    description: 'An open-source, invisible AI overlay for macOS — pipes your screen, mic, and meeting audio into an LLM in real time. Bring your own OpenAI, Anthropic, or Gemini key.',
+    tech: ['JavaScript', 'Electron', 'macOS', 'OpenAI', 'Anthropic', 'Gemini'],
+    github: 'https://github.com/chaturvediaksh1304-sudo/pirate'
+  },
+  {
     title: '500+ AI Agent Projects (curated)',
     description: 'A curated community collection of 500+ AI-agent projects and use cases spanning every major framework (LangGraph, CrewAI, AutoGen, Agno) and industry — a reference I keep for building and evaluating agents. Original collection by ashishpatel26.',
     tech: ['LangGraph', 'CrewAI', 'AutoGen', 'Agno', 'Python', 'Curated Resource'],
