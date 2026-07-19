@@ -151,6 +151,12 @@ export const PROJECTS: ProjectItem[] = [
     github: 'https://github.com/chaturvediaksh1304-sudo/pirate'
   },
   {
+    title: 'Volt Engineering — Website',
+    description: 'A clean, responsive marketing website for Volt Engineering — brand-forward layout and hand-built front-end with no framework overhead.',
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+    github: 'https://github.com/chaturvediaksh1304-sudo/volt-engineering-site'
+  },
+  {
     title: '500+ AI Agent Projects (curated)',
     description: 'A curated community collection of 500+ AI-agent projects and use cases spanning every major framework (LangGraph, CrewAI, AutoGen, Agno) and industry — a reference I keep for building and evaluating agents. Original collection by ashishpatel26.',
     tech: ['LangGraph', 'CrewAI', 'AutoGen', 'Agno', 'Python', 'Curated Resource'],
