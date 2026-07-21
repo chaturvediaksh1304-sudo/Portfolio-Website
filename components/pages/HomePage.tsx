@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
         style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 0.95, letterSpacing: '-2.46px' }}
       >
         Where <em className="not-italic serif-accent">design</em> meets{' '}
-        <em className="not-italic serif-accent">code and story.</em>
+        <em className="not-italic serif-accent">code and story!</em>
       </h1>
 
       <p
