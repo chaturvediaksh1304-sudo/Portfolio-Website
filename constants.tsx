@@ -128,6 +128,12 @@ export const PROJECTS: ProjectItem[] = [
     external: 'https://news-to-trade-agent.vercel.app'
   },
   {
+    title: 'Roots — Self-Attaching Agent Orchestration',
+    description: 'A meta-layer that drops into any project: it grills you on the goal, decomposes it into non-overlapping subtasks, generates specialized subagents to run them, and synthesizes the result. Ships as a Claude Code plugin.',
+    tech: ['Python', 'Multi-Agent Orchestration', 'Claude Code', 'LLM Agents'],
+    github: 'https://github.com/chaturvediaksh1304-sudo/Roots-Self-attaching-agent-orchestration'
+  },
+  {
     title: 'Atmos — Smart Thermostat',
     description: 'An immersive iOS experience built for Apple’s Swift Student Challenge 2026. Blends real-time environmental data with fluid animations and an on-device CoreML pipeline — complex data made minimal.',
     tech: ['SwiftUI', 'Swift', 'CoreML', 'PyTorch', 'FastAPI', 'MVVM', 'Adobe Creative Cloud'],
