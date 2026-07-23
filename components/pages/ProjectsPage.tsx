@@ -3,19 +3,25 @@ import { PROJECTS } from '../../constants';
 import { Github, ExternalLink } from 'lucide-react';
 
 /**
- * Preview image for a project. Deployed projects get a real screenshot of the
- * live site (WordPress mShots, keyless); GitHub-only projects fall back to the
- * repo's auto-generated OpenGraph card.
+ * Preview image for a project. Deployed projects get a real 1200x600 screenshot
+ * of the live site (thum.io, keyless); GitHub-only projects use the repo's
+ * OpenGraph card. The card <img> falls back to the OG card if the live
+ * screenshot fails, so every preview renders at the same size.
  */
-function previewFor(project: { external?: string; github?: string }): string | null {
+function ogCard(github?: string): string | null {
+  const match = github?.match(/github\.com\/([^/]+\/[^/]+)/);
+  return match ? `https://opengraph.githubassets.com/1/${match[1]}` : null;
+}
+
+function previewFor(project: { external?: string; github?: string }): {
+  src: string;
+  fallback: string | null;
+} | null {
+  const og = ogCard(project.github);
   if (project.external) {
-    return `https://s0.wp.com/mshots/v1/${encodeURIComponent(project.external)}?w=1200&h=600`;
+    return { src: `https://image.thum.io/get/width/1200/crop/600/${project.external}`, fallback: og };
   }
-  if (project.github) {
-    const match = project.github.match(/github\.com\/([^/]+\/[^/]+)/);
-    return match ? `https://opengraph.githubassets.com/1/${match[1]}` : null;
-  }
-  return null;
+  return og ? { src: og, fallback: null } : null;
 }
 
 const ProjectsPage: React.FC = () => {
@@ -28,7 +34,7 @@ const ProjectsPage: React.FC = () => {
         Things I’ve <em className="not-italic serif-accent">built.</em>
       </h1>
       <p className="animate-fade-rise-delay text-muted text-center max-w-xl mx-auto mt-6 mb-16">
-        Nine projects across full-stack, AI/ML, and design — each one shipped, most of them live.
+        {PROJECTS.length} projects across full-stack, AI/ML, and design — each one shipped, many of them live.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -48,9 +54,15 @@ const ProjectsPage: React.FC = () => {
                   className="block border-b border-white/10"
                 >
                   <img
-                    src={preview}
+                    src={preview.src}
                     alt={`${project.title} preview`}
-                    className="w-full aspect-[2/1] object-cover"
+                    className="w-full aspect-[2/1] object-cover bg-white/5"
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      if (preview.fallback && img.src !== preview.fallback) {
+                        img.src = preview.fallback;
+                      }
+                    }}
                   />
                 </a>
               )}
