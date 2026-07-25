@@ -118,8 +118,7 @@ export const PROJECTS: ProjectItem[] = [
     description: 'Real-time transaction fraud detection with a cinematic dark dashboard. An Isolation Forest scores every streaming transaction 0–100, flags anomalies with feature-level risk explanations, and pushes them to a live WebSocket dashboard in milliseconds.',
     tech: ['Python', 'scikit-learn', 'Isolation Forest', 'FastAPI', 'WebSockets', 'React 18', 'TypeScript', 'Docker'],
     github: 'https://github.com/chaturvediaksh1304-sudo/VaultScan',
-    external: 'https://vault-scan-beta.vercel.app',
-    previewRepo: true
+    external: 'https://vault-scan-beta.vercel.app'
   },
   {
     title: 'News-to-Trade Agent',

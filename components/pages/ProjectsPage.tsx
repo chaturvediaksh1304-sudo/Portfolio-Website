@@ -13,13 +13,18 @@ function ogCard(github?: string): string | null {
   return match ? `https://opengraph.githubassets.com/1/${match[1]}` : null;
 }
 
-function previewFor(project: { external?: string; github?: string; previewRepo?: boolean }): {
+function previewFor(project: { external?: string; github?: string }): {
   src: string;
   fallback: string | null;
 } | null {
   const og = ogCard(project.github);
-  if (project.external && !project.previewRepo) {
-    return { src: `https://image.thum.io/get/width/1200/crop/600/${project.external}`, fallback: og };
+  if (project.external) {
+    // Microlink renders full JS and waits, so dynamic apps screenshot correctly.
+    const u = encodeURIComponent(project.external);
+    return {
+      src: `https://api.microlink.io/?url=${u}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1200&viewport.height=630&waitUntil=networkidle2`,
+      fallback: og,
+    };
   }
   return og ? { src: og, fallback: null } : null;
 }
