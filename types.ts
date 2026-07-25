@@ -29,6 +29,9 @@ export interface ProjectItem {
   github?: string;
   external?: string;
   image?: string;
+  // Use the repo's GitHub card for the preview instead of a live screenshot
+  // (for dynamic apps that render blank to a screenshot bot).
+  previewRepo?: boolean;
 }
 
 export interface SkillCategory {

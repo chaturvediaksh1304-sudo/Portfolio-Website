@@ -13,12 +13,12 @@ function ogCard(github?: string): string | null {
   return match ? `https://opengraph.githubassets.com/1/${match[1]}` : null;
 }
 
-function previewFor(project: { external?: string; github?: string }): {
+function previewFor(project: { external?: string; github?: string; previewRepo?: boolean }): {
   src: string;
   fallback: string | null;
 } | null {
   const og = ogCard(project.github);
-  if (project.external) {
+  if (project.external && !project.previewRepo) {
     return { src: `https://image.thum.io/get/width/1200/crop/600/${project.external}`, fallback: og };
   }
   return og ? { src: og, fallback: null } : null;
