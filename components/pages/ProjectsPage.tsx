@@ -119,7 +119,7 @@ const ProjectsPage: React.FC = () => {
                   {project.tech.map((t, idx) => (
                     <li
                       key={idx}
-                      className="liquid-glass rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-muted"
+                      className="bg-white/90 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-navy/60"
                     >
                       {t}
                     </li>
