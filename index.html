@@ -3,33 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aksh Chaturvedi — Software · Design · Story</title>
-    <meta name="description" content="Aksh Chaturvedi — CS grad building at the intersection of design, code, and story. Software engineering, AI/ML, and product." />
+    <title>Aksh Chaturvedi — macOS</title>
+    <meta name="description" content="Aksh Chaturvedi — portfolio as a macOS desktop. Projects, experience, and more open as apps." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              // Velorah design system: Instrument Serif display, Inter body, Geist Mono tags.
-              serif: ['"Instrument Serif"', 'Georgia', 'serif'],
-              sans: ['Inter', 'system-ui', 'sans-serif'],
+              // System-first per spec §3; Inter is the web fallback for SF Pro.
+              sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', 'system-ui', 'Inter', 'sans-serif'],
               mono: ['"Geist Mono"', 'ui-monospace', 'monospace'],
             },
             colors: {
-              // Velorah deep-ocean palette. Class names kept for low churn.
-              navy: 'hsl(201 100% 13%)', // --bg (deep ocean blue)
-              'light-navy': 'hsla(201, 60%, 20%, 0.5)', // translucent panel base
-              'lightest-navy': 'hsla(0, 0%, 100%, 0.14)', // glass borders
-              slate: '#FFFFFF', // primary text
-              'light-slate': '#FFFFFF',
-              'lightest-slate': '#FFFFFF',
-              muted: 'hsl(240 4% 66%)', // secondary text (Velorah gray)
-              white: '#FFFFFF',
-              green: 'hsl(240 4% 78%)', // accent alias → soft silver
+              'mac-red': '#ff5f57',
+              'mac-yellow': '#febc2e',
+              'mac-green': '#28c840',
             },
           },
         },
@@ -49,12 +41,27 @@
       ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 4px; }
       ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.35); }
       body {
-        background: var(--bg);
-        color: var(--text);
+        /* macOS-style wallpaper (swappable — spec §12). */
+        background: linear-gradient(150deg, #0b1e3f 0%, #2b5876 45%, #4e4376 100%) fixed;
+        color: #fff;
         font-family: var(--font-sans);
         font-size: 16px;
-        line-height: 1.7;
+        line-height: 1.5;
         -webkit-font-smoothing: antialiased;
+        overflow: hidden; /* desktop shell owns its own scrolling */
+      }
+      /* Shared macOS liquid-glass surface (spec §5 — defined once, reused). */
+      .glass-surface {
+        background: rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      }
+      .glass-dark {
+        background: rgba(28, 30, 38, 0.72);
+        backdrop-filter: blur(24px) saturate(160%);
+        -webkit-backdrop-filter: blur(24px) saturate(160%);
       }
       /* Muted serif emphasis inside display headlines (Velorah hero style) */
       .serif-accent {
@@ -117,18 +124,6 @@
       .animate-fade-rise-delay { animation: fade-rise 0.8s ease-out 0.2s both; }
       .animate-fade-rise-delay-2 { animation: fade-rise 0.8s ease-out 0.4s both; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "framer-motion": "https://esm.sh/framer-motion@^12.31.0",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>

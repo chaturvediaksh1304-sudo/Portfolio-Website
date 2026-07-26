@@ -1,0 +1,48 @@
+import React, { useState } from 'react';
+import { X } from 'lucide-react';
+import { APPS, getApp } from '../apps/registry';
+import AppContent from '../apps/AppContent';
+
+// Minimal iOS-style fallback (spec §10 full adaptation deferred): tappable icon
+// grid → full-screen AppScreen using the same content components as desktop.
+export default function MobileView() {
+  const [openId, setOpenId] = useState<string | null>(null);
+
+  return (
+    <div className="h-screen w-screen overflow-y-auto">
+      <div className="px-6 pt-14 pb-24">
+        <h1 className="text-white text-2xl font-semibold mb-0.5">Aksh Chaturvedi</h1>
+        <p className="text-white/50 text-sm mb-8">Tap an app to open</p>
+        <div className="grid grid-cols-3 gap-5">
+          {APPS.map((app) => {
+            const Icon = app.icon;
+            return (
+              <button
+                key={app.id}
+                onClick={() => setOpenId(app.id)}
+                className="flex flex-col items-center gap-1.5"
+              >
+                <span className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg" style={{ background: app.color }}>
+                  <Icon size={28} />
+                </span>
+                <span className="text-white text-[11px]">{app.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {openId && (
+        <div className="fixed inset-0 z-50 glass-dark overflow-y-auto">
+          <div className="sticky top-0 h-12 flex items-center justify-between px-4 border-b border-white/10 glass-dark z-10">
+            <span className="text-white font-medium">{getApp(openId)?.label}</span>
+            <button onClick={() => setOpenId(null)} className="text-white/70" aria-label="Close">
+              <X size={22} />
+            </button>
+          </div>
+          <AppContent appId={openId} />
+        </div>
+      )}
+    </div>
+  );
+}
