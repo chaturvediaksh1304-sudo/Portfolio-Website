@@ -22,10 +22,10 @@ export default function MobileView() {
                 onClick={() => setOpenId(app.id)}
                 className="flex flex-col items-center gap-1.5"
               >
-                <span className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg" style={{ background: app.color }}>
+                <span className="app-icon w-16 h-16 flex items-center justify-center" style={{ background: app.gradient }}>
                   <Icon size={28} />
                 </span>
-                <span className="text-white text-[11px]">{app.label}</span>
+                <span className="text-white/95 text-[11px] [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">{app.label}</span>
               </button>
             );
           })}

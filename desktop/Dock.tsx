@@ -54,15 +54,15 @@ export default function Dock() {
                   height: BASE,
                   transform: `scale(${scale})`,
                   transformOrigin: 'bottom',
-                  transition: mouseX == null ? 'transform 0.2s ease' : 'none',
+                  transition: mouseX == null ? 'transform 0.22s cubic-bezier(0.2,0.9,0.3,1)' : 'none',
                 }}
-                className="rounded-xl flex items-center justify-center shrink-0"
+                className="flex items-center justify-center shrink-0 active:brightness-90"
               >
-                <span className="w-full h-full rounded-xl flex items-center justify-center shadow-lg" style={{ background: app.color }}>
+                <span className="app-icon w-full h-full flex items-center justify-center" style={{ background: app.gradient }}>
                   <Icon size={24} />
                 </span>
               </button>
-              <span className={`w-1 h-1 rounded-full mt-1 ${openIds.includes(app.id) ? 'bg-white/80' : 'bg-transparent'}`} />
+              <span className={`w-1 h-1 rounded-full mt-1.5 transition-colors ${openIds.includes(app.id) ? 'bg-white/85' : 'bg-transparent'}`} />
             </div>
           );
         })}

@@ -12,12 +12,12 @@ export default function DesktopIcon({ app }: { app: AppDef }) {
       title={`Open ${app.label}`}
     >
       <span
-        className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg transition-transform group-active:scale-95"
-        style={{ background: app.color }}
+        className="app-icon w-14 h-14 flex items-center justify-center transition-transform group-active:scale-95"
+        style={{ background: app.gradient }}
       >
-        <Icon size={26} />
+        <Icon size={25} />
       </span>
-      <span className="text-[12px] text-white text-center leading-tight px-1.5 rounded bg-black/25">
+      <span className="text-[12px] text-white/95 text-center leading-tight px-1.5 rounded-md bg-black/30 [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
         {app.label}
       </span>
     </button>

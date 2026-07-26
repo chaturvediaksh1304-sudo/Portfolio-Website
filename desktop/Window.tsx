@@ -27,18 +27,20 @@ export default function Window({ win }: { win: WinState }) {
       }
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.96 }}
+        initial={{ opacity: 0, scale: 0.94 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.18, ease: 'easeOut' }}
+        transition={{ type: 'spring', bounce: 0, duration: 0.35 }}
         onMouseDown={() => focus(win.id)}
-        className="glass-dark rounded-xl overflow-hidden w-full h-full flex flex-col border border-white/10 shadow-2xl"
+        className="glass-dark rounded-[13px] overflow-hidden w-full h-full flex flex-col border-[0.5px] border-white/12 shadow-[0_24px_72px_rgba(0,0,0,0.55)] ring-1 ring-black/40"
       >
-        {/* Title bar with traffic lights */}
-        <div className="win-titlebar h-10 shrink-0 flex items-center px-4 gap-2 select-none border-b border-white/10">
-          <button onClick={() => close(win.id)} className="w-3 h-3 rounded-full bg-mac-red" aria-label="Close" />
-          <button onClick={() => toggleMinimize(win.id)} className="w-3 h-3 rounded-full bg-mac-yellow" aria-label="Minimize" />
-          <button className="w-3 h-3 rounded-full bg-mac-green" aria-label="Zoom" />
-          <span className="ml-2 text-[13px] text-white/70 font-medium">{app?.label}</span>
+        {/* Title bar — traffic lights left, centered title (macOS) */}
+        <div className="win-titlebar relative h-11 shrink-0 flex items-center px-4 gap-2 select-none border-b-[0.5px] border-white/8">
+          <button onClick={() => close(win.id)} className="tl tl-close w-3 h-3 rounded-full bg-mac-red hover:brightness-95" aria-label="Close" />
+          <button onClick={() => toggleMinimize(win.id)} className="tl tl-min w-3 h-3 rounded-full bg-mac-yellow hover:brightness-95" aria-label="Minimize" />
+          <button className="tl tl-zoom w-3 h-3 rounded-full bg-mac-green hover:brightness-95" aria-label="Zoom" />
+          <span className="absolute left-1/2 -translate-x-1/2 text-[13px] text-white/75 font-semibold tracking-[-0.01em] pointer-events-none">
+            {app?.label}
+          </span>
         </div>
         {/* Content */}
         <div className="flex-1 overflow-auto">
