@@ -24,7 +24,6 @@ export default function Dock() {
         onMouseLeave={() => setMouseX(null)}
       >
         {APPS.map((app, i) => {
-          const Icon = app.icon;
           let scale = 1;
           const cx = centers.current[i];
           if (mouseX != null && cx != null) {
@@ -56,11 +55,14 @@ export default function Dock() {
                   transformOrigin: 'bottom',
                   transition: mouseX == null ? 'transform 0.22s cubic-bezier(0.2,0.9,0.3,1)' : 'none',
                 }}
-                className="flex items-center justify-center shrink-0 active:brightness-90"
+                className="flex items-center justify-center shrink-0"
               >
-                <span className="app-icon w-full h-full flex items-center justify-center" style={{ background: app.gradient }}>
-                  <Icon size={24} />
-                </span>
+                <img
+                  src={app.iconSrc}
+                  alt={app.label}
+                  draggable={false}
+                  className="w-full h-full [filter:drop-shadow(0_2px_3px_rgba(0,0,0,0.3))]"
+                />
               </button>
               <span className={`w-1 h-1 rounded-full mt-1.5 transition-colors ${openIds.includes(app.id) ? 'bg-white/85' : 'bg-transparent'}`} />
             </div>
