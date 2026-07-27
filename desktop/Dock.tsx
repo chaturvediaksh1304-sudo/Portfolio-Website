@@ -86,7 +86,8 @@ export default function Dock() {
       <div
         onMouseMove={(e) => mouseX.set(e.clientX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="glass-surface pointer-events-auto rounded-2xl px-2.5 pt-1.5 pb-1 flex items-end gap-1.5"
+        style={{ width: 660, background: 'rgba(255,255,255,0.5)' }}
+        className="glass-surface pointer-events-auto rounded-2xl px-2.5 pt-1.5 pb-1 flex items-end justify-center gap-1.5"
       >
         {APPS.map((app) => (
           <DockIcon
