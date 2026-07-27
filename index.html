@@ -41,13 +41,8 @@
       ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 4px; }
       ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.35); }
       body {
-        /* macOS Sonoma-style layered aurora wallpaper (swappable — spec §12). */
-        background:
-          radial-gradient(120% 85% at 18% 8%, #3157a0 0%, transparent 52%),
-          radial-gradient(100% 90% at 88% 18%, #7b4fa0 0%, transparent 48%),
-          radial-gradient(130% 110% at 55% 105%, #1c7d9e 0%, transparent 55%),
-          linear-gradient(165deg, #0f1f3d 0%, #0a1226 100%);
-        background-attachment: fixed;
+        /* Real macOS Sonoma (Dark) wallpaper from 512pixels.net. */
+        background: #0a1226 url('/assets/wallpaper.jpg') center center / cover no-repeat fixed;
         color: #fff;
         font-family: var(--font-sans);
         font-size: 16px;
