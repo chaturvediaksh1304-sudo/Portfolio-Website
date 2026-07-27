@@ -9,6 +9,8 @@ export interface WinState {
   h: number;
   z: number;
   minimized: boolean;
+  maximized: boolean;
+  prev?: { x: number; y: number; w: number; h: number };
 }
 
 interface WindowStore {
@@ -19,6 +21,7 @@ interface WindowStore {
   close: (id: string) => void;
   focus: (id: string) => void;
   toggleMinimize: (id: string) => void;
+  toggleMaximize: (id: string) => void;
   setBounds: (id: string, b: Partial<Pick<WinState, 'x' | 'y' | 'w' | 'h'>>) => void;
 }
 
@@ -57,6 +60,7 @@ export const useWindowStore = create<WindowStore>((set, get) => ({
           h: 520,
           z,
           minimized: false,
+          maximized: false,
         },
       ],
     }));
@@ -82,6 +86,17 @@ export const useWindowStore = create<WindowStore>((set, get) => ({
       windows: s.windows.map((w) =>
         w.id === id ? { ...w, minimized: !w.minimized } : w,
       ),
+    })),
+
+  toggleMaximize: (id) =>
+    set((s) => ({
+      windows: s.windows.map((w) => {
+        if (w.id !== id) return w;
+        if (w.maximized) {
+          return { ...w, maximized: false, ...(w.prev ?? {}) };
+        }
+        return { ...w, maximized: true, prev: { x: w.x, y: w.y, w: w.w, h: w.h } };
+      }),
     })),
 
   setBounds: (id, b) =>

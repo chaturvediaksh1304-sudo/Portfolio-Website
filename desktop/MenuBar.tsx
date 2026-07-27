@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { Apple, Sparkles, Search, Wifi, BatteryFull, Volume2, SlidersHorizontal } from 'lucide-react';
 import { useWindowStore } from '../store/windowStore';
 import { getApp } from '../apps/registry';
+import ControlCenter from './ControlCenter';
 
 const MENUS = ['File', 'Edit', 'View', 'Go', 'Window', 'Help'];
 
@@ -20,6 +22,7 @@ export default function MenuBar() {
   const focusedId = useWindowStore((s) => s.focusedId);
   const clock = useClock();
   const appName = (focusedId && getApp(focusedId)?.label) || 'Finder';
+  const [showCC, setShowCC] = useState(false);
 
   return (
     <div className="glass-dark fixed top-0 inset-x-0 h-7 z-[9999] flex items-center justify-between px-3 text-[13px] text-white/90 border-b border-white/10">
@@ -37,10 +40,16 @@ export default function MenuBar() {
         <Volume2 size={15} />
         <BatteryFull size={16} />
         <Wifi size={15} />
-        <Search size={14} />
-        <SlidersHorizontal size={14} />
+        <button aria-label="Spotlight" onClick={() => window.dispatchEvent(new Event('open-spotlight'))} className="text-white/85 hover:text-white">
+          <Search size={14} />
+        </button>
+        <button aria-label="Control Center" onClick={() => setShowCC((v) => !v)} className={showCC ? 'text-white' : 'text-white/85 hover:text-white'}>
+          <SlidersHorizontal size={14} />
+        </button>
         <span className="font-medium tabular-nums">{clock}</span>
       </div>
+
+      <AnimatePresence>{showCC && <ControlCenter />}</AnimatePresence>
     </div>
   );
 }
