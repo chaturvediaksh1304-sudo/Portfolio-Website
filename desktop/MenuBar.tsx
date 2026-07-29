@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { Apple, Sparkles, Search, Wifi, BatteryFull, Volume2, SlidersHorizontal } from 'lucide-react';
+import { Sparkles, Search, Wifi, BatteryFull, Volume2, SlidersHorizontal } from 'lucide-react';
 import { useWindowStore } from '../store/windowStore';
 import { getApp } from '../apps/registry';
 import ControlCenter from './ControlCenter';
@@ -27,7 +27,7 @@ export default function MenuBar() {
   return (
     <div className="glass-dark fixed top-0 inset-x-0 h-7 z-[9999] flex items-center justify-between px-3 text-[13px] text-white/90 border-b border-white/10">
       <div className="flex items-center gap-4">
-        <Apple size={15} className="fill-white/90" />
+        <img src="/apple-logo.svg" alt="Apple" className="w-3.5 h-3.5 [filter:brightness(0)_invert(1)]" />
         <span className="font-semibold">{appName}</span>
         <div className="hidden md:flex items-center gap-4 text-white/80">
           {MENUS.map((m) => (

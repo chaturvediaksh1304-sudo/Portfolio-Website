@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -28,6 +28,10 @@
       }
     </script>
     <style>
+      @font-face { font-family: 'Brother 1816'; src: url('/fonts/brother-regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+      @font-face { font-family: 'Brother 1816'; src: url('/fonts/brother-bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+      @font-face { font-family: 'Brother 1816'; src: url('/fonts/brother-black.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+      .font-brother { font-family: 'Brother 1816', 'Inter', sans-serif; }
       :root {
         --bg: hsl(201 100% 13%);
         --text: hsl(0 0% 100%);
@@ -41,8 +45,7 @@
       ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 4px; }
       ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.35); }
       body {
-        /* Real macOS Sonoma (Dark) wallpaper from 512pixels.net. */
-        background: #0a1226 url('/assets/wallpaper.jpg') center center / cover no-repeat fixed;
+        background: #000000;
         color: #fff;
         font-family: var(--font-sans);
         font-size: 16px;
@@ -51,7 +54,10 @@
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
         overflow: hidden; /* desktop shell owns its own scrolling */
+        cursor: url('/cursors/normal-select.svg') 4 4, auto;
       }
+      a, button, [role="button"], .win-titlebar .tl { cursor: url('/cursors/link-select.svg') 6 2, pointer; }
+      input, textarea { cursor: url('/cursors/text-select.svg') 4 8, text; }
       /* Shared macOS liquid-glass surface (spec §5 — defined once, reused). */
       .glass-surface {
         background: rgba(255, 255, 255, 0.12);
@@ -103,6 +109,17 @@
         opacity: 0;
         transition: opacity 0.12s;
       }
+      /* Dock launch bounce (macos-web style). */
+      @keyframes dock-bounce {
+        0%   { transform: translateY(0); }
+        20%  { transform: translateY(-34px); }
+        40%  { transform: translateY(0); }
+        55%  { transform: translateY(-16px); }
+        72%  { transform: translateY(0); }
+        86%  { transform: translateY(-6px); }
+        100% { transform: translateY(0); }
+      }
+      .dock-bounce { animation: dock-bounce 0.9s ease-out; }
       .win-titlebar:hover .tl-close::after { content: '×'; opacity: 1; }
       .win-titlebar:hover .tl-min::after { content: '−'; opacity: 1; }
       .win-titlebar:hover .tl-zoom::after { content: '+'; opacity: 1; }

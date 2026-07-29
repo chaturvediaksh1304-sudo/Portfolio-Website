@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.19.12",
+    "@paper-design/shaders-react": "^0.0.78",
     "d3": "^7.9.0",
     "framer-motion": "^12.31.0",
     "lucide-react": "^0.563.0",

@@ -1,35 +1,34 @@
 import { PROJECTS } from '../constants';
 import type { ProjectItem } from '../types';
 
-export type AppKind = 'project' | 'about' | 'resume' | 'contact' | 'finder';
+export type AppKind = 'project' | 'link' | 'experience' | 'references' | 'education';
 
 export interface AppDef {
   id: string;
   label: string;
-  iconSrc: string; // real macOS Big Sur icon (from macos-web.app assets)
+  iconSrc: string;
   kind: AppKind;
-  project?: ProjectItem;
+  project?: ProjectItem; // kind 'project' — opens a window
+  href?: string;         // kind 'link' — opens a new browser tab
 }
 
 const find = (key: string): ProjectItem | undefined =>
   PROJECTS.find((p) => p.title.includes(key));
 
-const icon = (id: string) => `/app-icons/${id}.png`;
-
-// Curated roster (spec §9), each mapped to a real macOS app icon.
+// Dock roster — 6 project windows + 3 external links.
 export const APPS: AppDef[] = [
-  { id: 'finder', label: 'Finder', iconSrc: icon('finder'), kind: 'finder' },
-  { id: 'xskill', label: 'XSkill', iconSrc: icon('xskill'), kind: 'project', project: find('XSkill') },
-  { id: 'grab', label: 'Grab', iconSrc: icon('grab'), kind: 'project', project: find('Grab') },
-  { id: 'vaultscan', label: 'VaultScan', iconSrc: icon('vaultscan'), kind: 'project', project: find('VaultScan') },
-  { id: 'newstotrade', label: 'News-to-Trade', iconSrc: icon('newstotrade'), kind: 'project', project: find('News-to-Trade') },
-  { id: 'headcountiq', label: 'HeadcountIQ', iconSrc: icon('headcountiq'), kind: 'project', project: find('HeadcountIQ') },
-  { id: 'pirate', label: 'Pirate', iconSrc: icon('pirate'), kind: 'project', project: find('Pirate') },
-  { id: 'about', label: 'About', iconSrc: icon('about'), kind: 'about' },
-  { id: 'resume', label: 'Resume', iconSrc: icon('resume'), kind: 'resume' },
-  { id: 'contact', label: 'Contact', iconSrc: icon('contact'), kind: 'contact' },
+  { id: 'experience', label: 'Professional Experience', iconSrc: '/app-icons/experience.png', kind: 'experience' },
+  { id: 'references', label: 'References', iconSrc: '/app-icons/references.png', kind: 'references' },
+  { id: 'education', label: 'Education', iconSrc: '/app-icons/education.png', kind: 'education' },
+  { id: 'news', label: 'News-to-Trade', iconSrc: '/app-icons/news.jpg', kind: 'project', project: find('News-to-Trade') },
+  { id: 'grab', label: 'Grab', iconSrc: '/app-icons/grab.jpg', kind: 'project', project: find('Grab') },
+  { id: 'pirate', label: 'Pirate', iconSrc: '/app-icons/pirate.png', kind: 'project', project: find('Pirate') },
+  { id: 'roots', label: 'Roots', iconSrc: '/app-icons/roots.png', kind: 'project', project: find('Roots') },
+  { id: 'vaultscan', label: 'VaultScan', iconSrc: '/app-icons/vaultscan.png', kind: 'project', project: find('VaultScan') },
+  { id: 'volt', label: 'Volt Engineering', iconSrc: '/app-icons/volt.svg', kind: 'project', project: find('Volt') },
+  { id: 'github', label: 'GitHub', iconSrc: '/app-icons/github.png', kind: 'link', href: 'https://github.com/chaturvediaksh1304-sudo' },
+  { id: 'instagram', label: 'Instagram', iconSrc: '/app-icons/instagram.svg', kind: 'link', href: 'https://www.instagram.com/_47_aksh_/' },
+  { id: 'linkedin', label: 'LinkedIn', iconSrc: '/app-icons/linkedin.png', kind: 'link', href: 'https://www.linkedin.com/in/aksh-chaturvedi/' },
 ];
 
 export const getApp = (id: string): AppDef | undefined => APPS.find((a) => a.id === id);
-
-export const DESKTOP_APPS = APPS.filter((a) => a.kind === 'project');

@@ -1,17 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import MenuBar from './MenuBar';
-import Dock from './Dock';
-import DesktopIcon from './DesktopIcon';
+import MacOSDock from '../components/ui/mac-os-dock';
 import WindowManager from './WindowManager';
 import Spotlight from './Spotlight';
-import { DESKTOP_APPS } from '../apps/registry';
+import { TiltCard } from '../components/ui/tilt-card';
+import { APPS, getApp } from '../apps/registry';
 import { useWindowStore } from '../store/windowStore';
-import RotatingEarth from '../components/ui/wireframe-dotted-globe';
+import AnimatedGradientBackground from '../components/ui/animated-gradient-background';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { Marquee } from '../components/ui/marquee';
+
+const SKILLS = [
+  'Java', 'Python', 'SQL', 'PostgreSQL', 'MySQL', 'TypeScript', 'JavaScript', 'HTML', 'CSS',
+  'ETL/ELT Pipelines', 'Relational Schema Design', 'Query Optimization', 'Multi-table Joins',
+  'Algorithmic Data Modeling', 'Telemetry Processing', 'Matrix Ingestion', 'Vector Arrays',
+  'Spring Framework', 'AWS (EC2, Lambda, API Gateway)', 'Docker', 'GitHub', 'REST APIs',
+  'Data Integrity Control', 'Asynchronous Multithreading', 'Agile/Scrum', 'Infrastructure Monitoring',
+];
+
+const DOCK_APPS = APPS.map((a) => ({ id: a.id, name: a.label, icon: a.iconSrc }));
 
 export default function DesktopView() {
   const openApp = useWindowStore((s) => s.open);
+  const windows = useWindowStore((s) => s.windows);
+  const openIds = windows.filter((w) => !w.minimized).map((w) => w.appId);
   const [menu, setMenu] = useState<{ x: number; y: number } | null>(null);
+
+  // Projects open a window; links open a new browser tab.
+  const handleDockClick = (id: string) => {
+    const app = getApp(id);
+    if (app?.kind === 'link' && app.href) {
+      window.open(app.href, '_blank', 'noopener,noreferrer');
+    } else {
+      openApp(id);
+    }
+  };
 
   useEffect(() => {
     const close = () => setMenu(null);
@@ -22,9 +46,7 @@ export default function DesktopView() {
   const MENU_ITEMS: { label: string; onClick?: () => void; divider?: boolean }[] = [
     { label: 'New Folder' },
     { label: 'Get Info' },
-    { label: 'Change Desktop Background…', divider: true },
-    { label: 'About This Mac', onClick: () => openApp('about') },
-    { label: 'Resume', onClick: () => openApp('resume') },
+    { label: 'Change Desktop Background…' },
   ];
 
   return (
@@ -39,22 +61,60 @@ export default function DesktopView() {
           setMenu({ x: e.clientX, y: e.clientY - 28 });
         }}
       >
-        {/* Rotating wireframe globe centerpiece (behind icons + windows) */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-          <RotatingEarth
-            width={560}
-            height={560}
-            showHint={false}
-            className="opacity-70 pointer-events-auto [filter:drop-shadow(0_10px_40px_rgba(0,0,0,0.5))]"
-          />
+        {/* Animated radial gradient desktop background (behind icons + windows) */}
+        <AnimatedGradientBackground Breathing containerClassName="z-0" />
+
+        {/* Cat + skills marquee centerpiece (behind windows, non-blocking) */}
+        <div className="absolute inset-0 z-0 flex flex-col items-center justify-center pointer-events-none px-4 -translate-y-20">
+          <div className="w-96 h-96 max-w-[70vw] max-h-[70vw]">
+            <DotLottieReact
+              src="https://lottie.host/8cf4ba71-e5fb-44f3-8134-178c4d389417/0CCsdcgNIP.json"
+              loop
+              autoplay
+            />
+          </div>
+          <div className="w-full max-w-3xl mt-2">
+            <Marquee duration={30} fadeAmount={12}>
+              {SKILLS.map((s) => (
+                <span
+                  key={s}
+                  className="font-brother mx-6 text-white text-xl md:text-2xl font-black tracking-wide whitespace-nowrap"
+                >
+                  {s}
+                </span>
+              ))}
+            </Marquee>
+          </div>
         </div>
 
-        {/* Icon grid, top-right */}
-        <div className="absolute top-4 right-4 flex flex-col gap-4 items-center">
-          {DESKTOP_APPS.map((app) => (
-            <DesktopIcon key={app.id} app={app} />
-          ))}
-        </div>
+        {/* Desktop profile tilt card — constant size (scale 1 = no zoom), no photo */}
+        <TiltCard
+          scale={1}
+          className="absolute top-6 left-6 z-[1] w-[290px] rounded-3xl border border-white/15 bg-black/55 backdrop-blur-md p-6 shadow-2xl"
+        >
+          <div className="relative z-20 text-white font-brother">
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-black">
+              Open to work
+            </span>
+            <h3 className="text-2xl font-semibold tracking-tight mt-4">Aksh Chaturvedi</h3>
+            <p className="mt-1 text-sm text-white/60">
+              CS grad · Adobe Student Ambassador · Co-founder, MANK Studios
+            </p>
+            <div className="mt-4 space-y-1 text-[13px] text-white/70">
+              <p>🎓 Central Michigan University · Magna Cum Laude</p>
+              <p>📍 Mount Pleasant, Michigan</p>
+              <p>🛠 Design · Engineering · Marketing</p>
+            </div>
+            <div className="mt-4 pt-4 border-t border-white/10 space-y-2 text-[13px]">
+              <a href="mailto:chaturvedi.aksh1304@gmail.com" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+                <span>✉️</span> chaturvedi.aksh1304@gmail.com
+              </a>
+              <a href="tel:+17343530799" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors">
+                <span>📞</span> +1 (734) 353-0799
+              </a>
+            </div>
+          </div>
+        </TiltCard>
 
         <WindowManager />
 
@@ -85,7 +145,11 @@ export default function DesktopView() {
         </AnimatePresence>
       </div>
 
-      <Dock />
+      <div className="fixed bottom-2 inset-x-0 z-[9998] flex justify-center pointer-events-none">
+        <div className="pointer-events-auto">
+          <MacOSDock apps={DOCK_APPS} onAppClick={handleDockClick} openApps={openIds} />
+        </div>
+      </div>
       <Spotlight />
     </div>
   );

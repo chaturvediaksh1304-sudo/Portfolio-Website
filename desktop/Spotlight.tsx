@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search } from 'lucide-react';
-import { APPS } from '../apps/registry';
+import { APPS, getApp } from '../apps/registry';
 import { useWindowStore } from '../store/windowStore';
 
 export default function Spotlight() {
@@ -38,7 +38,12 @@ export default function Spotlight() {
   }, [query]);
 
   const launch = (id: string) => {
-    openApp(id);
+    const app = getApp(id);
+    if (app?.kind === 'link' && app.href) {
+      window.open(app.href, '_blank', 'noopener,noreferrer');
+    } else {
+      openApp(id);
+    }
     setOpen(false);
   };
 
