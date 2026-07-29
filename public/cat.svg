@@ -1,0 +1,11 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#ff5fb0">
+    <!-- ears -->
+    <path d="M18 22 L20 6 L33 20 Z" />
+    <path d="M46 22 L44 6 L31 20 Z" />
+    <!-- head + body (sitting) -->
+    <path d="M32 12 C19 12 15 24 16 38 C16 50 22 60 32 60 C42 60 48 50 48 38 C49 24 45 12 32 12 Z" />
+    <!-- tail curling to the right -->
+    <path d="M46 54 C60 54 60 34 49 33 C57 38 54 48 44 47 Z" />
+  </g>
+</svg>
