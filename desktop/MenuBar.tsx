@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { Sparkles, Search, Wifi, BatteryFull, Volume2, SlidersHorizontal } from 'lucide-react';
+import { Sparkles, Search, Wifi, Volume2, SlidersHorizontal } from 'lucide-react';
 import { useWindowStore } from '../store/windowStore';
 import { getApp } from '../apps/registry';
 import ControlCenter from './ControlCenter';
@@ -38,7 +38,6 @@ export default function MenuBar() {
       <div className="flex items-center gap-3.5 text-white/85">
         <Sparkles size={14} />
         <Volume2 size={15} />
-        <BatteryFull size={16} />
         <Wifi size={15} />
         <button aria-label="Spotlight" onClick={() => window.dispatchEvent(new Event('open-spotlight'))} className="text-white/85 hover:text-white">
           <Search size={14} />
