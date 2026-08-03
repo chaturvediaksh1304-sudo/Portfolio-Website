@@ -29,6 +29,7 @@ export const APPS: AppDef[] = [
   { id: 'github', label: 'GitHub', iconSrc: '/app-icons/github.png', kind: 'link', href: 'https://github.com/chaturvediaksh1304-sudo' },
   { id: 'instagram', label: 'Instagram', iconSrc: '/app-icons/instagram.svg', kind: 'link', href: 'https://www.instagram.com/_47_aksh_/' },
   { id: 'linkedin', label: 'LinkedIn', iconSrc: '/app-icons/linkedin.png', kind: 'link', href: 'https://www.linkedin.com/in/aksh-chaturvedi/' },
+  { id: 'x', label: 'X', iconSrc: '/app-icons/x.jpg', kind: 'link', href: 'https://x.com/aksh_chaturvedi' },
 ];
 
 export const getApp = (id: string): AppDef | undefined => APPS.find((a) => a.id === id);
