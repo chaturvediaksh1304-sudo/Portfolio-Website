@@ -26,6 +26,19 @@ export const APPS: AppDef[] = [
   { id: 'roots', label: 'Roots', iconSrc: '/app-icons/roots.png', kind: 'project', project: find('Roots') },
   { id: 'vaultscan', label: 'VaultScan', iconSrc: '/app-icons/vaultscan.png', kind: 'project', project: find('VaultScan') },
   { id: 'volt', label: 'Volt Engineering', iconSrc: '/app-icons/volt.svg', kind: 'project', project: find('Volt') },
+  {
+    id: 'llmgateway',
+    label: 'LLM Gateway',
+    iconSrc: '/app-icons/llm.png',
+    kind: 'project',
+    project: {
+      title: 'LLM Gateway',
+      description:
+        'A proxy every LLM request runs through: shared budgets, per-org rate limits, and automatic OpenAI/Anthropic failover.',
+      tech: ['Python', 'FastAPI', 'OpenAI', 'Anthropic', 'Rate Limiting'],
+      github: 'https://github.com/chaturvediaksh1304-sudo/llm-gateway',
+    },
+  },
   { id: 'github', label: 'GitHub', iconSrc: '/app-icons/github.png', kind: 'link', href: 'https://github.com/chaturvediaksh1304-sudo' },
   { id: 'instagram', label: 'Instagram', iconSrc: '/app-icons/instagram.svg', kind: 'link', href: 'https://www.instagram.com/_47_aksh_/' },
   { id: 'linkedin', label: 'LinkedIn', iconSrc: '/app-icons/linkedin.png', kind: 'link', href: 'https://www.linkedin.com/in/aksh-chaturvedi/' },
