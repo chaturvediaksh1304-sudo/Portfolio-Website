@@ -8,18 +8,28 @@ export default function ProjectApp({ project }: { project?: ProjectItem }) {
   const preview = previewFor(project);
   return (
     <div className="text-white">
-      {preview && (
-        <a href={project.external || project.github} target="_blank" rel="noreferrer" className="block">
-          <img
-            src={preview.src}
-            alt={`${project.title} preview`}
-            className="w-full aspect-[2/1] object-cover bg-white/5"
-            onError={(e) => {
-              const i = e.currentTarget;
-              if (preview.fallback && i.src !== preview.fallback) i.src = preview.fallback;
-            }}
-          />
-        </a>
+      {/* Live site embedded when available; else the screenshot/repo card. */}
+      {project.external ? (
+        <iframe
+          src={project.external}
+          title={`${project.title} live site`}
+          className="w-full h-[68vh] border-0 bg-white block"
+          loading="lazy"
+        />
+      ) : (
+        preview && (
+          <a href={project.github} target="_blank" rel="noreferrer" className="block">
+            <img
+              src={preview.src}
+              alt={`${project.title} preview`}
+              className="w-full aspect-[2/1] object-cover bg-white/5"
+              onError={(e) => {
+                const i = e.currentTarget;
+                if (preview.fallback && i.src !== preview.fallback) i.src = preview.fallback;
+              }}
+            />
+          </a>
+        )
       )}
       <div className="p-6 md:p-8">
         <h2 className="text-2xl font-semibold mb-3">{project.title}</h2>
