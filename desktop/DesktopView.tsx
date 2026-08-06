@@ -4,6 +4,7 @@ import MenuBar from './MenuBar';
 import MacOSDock from '../components/ui/mac-os-dock';
 import WindowManager from './WindowManager';
 import Spotlight from './Spotlight';
+import WorldClocks from './WorldClocks';
 import { TiltCard } from '../components/ui/tilt-card';
 import { APPS, getApp } from '../apps/registry';
 import { useWindowStore } from '../store/windowStore';
@@ -115,6 +116,8 @@ export default function DesktopView() {
             </div>
           </div>
         </TiltCard>
+
+        <WorldClocks />
 
         <WindowManager />
 
