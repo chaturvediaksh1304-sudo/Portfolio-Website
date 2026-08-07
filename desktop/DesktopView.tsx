@@ -75,7 +75,7 @@ export default function DesktopView() {
             />
           </div>
           <div className="w-full max-w-3xl mt-2">
-            <Marquee duration={30} fadeAmount={12}>
+            <Marquee duration={75} fadeAmount={12}>
               {SKILLS.map((s) => (
                 <span
                   key={s}
