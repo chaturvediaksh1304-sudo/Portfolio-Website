@@ -32,12 +32,28 @@ function Slider({ icon: Icon, value, onChange }: { icon: any; value: number; onC
   );
 }
 
+// Brightness 100 = no dim; 0 = DIM_MAX black overlay (never fully black — the desktop stays readable).
+const DIM_MAX = 0.7;
+
+// The dimmer div in App.tsx holds the current level, so it survives Control Center unmounting.
+const dimmer = () => document.getElementById('screen-dim');
+
+const readBrightness = () => {
+  const dim = parseFloat(dimmer()?.style.opacity || '0');
+  return Math.round(100 - ((Number.isFinite(dim) ? dim : 0) / DIM_MAX) * 100);
+};
+
+const applyBrightness = (v: number) => {
+  const el = dimmer();
+  if (el) el.style.opacity = String(((100 - v) / 100) * DIM_MAX);
+};
+
 export default function ControlCenter() {
   const [wifi, setWifi] = useState(true);
   const [bt, setBt] = useState(true);
   const [airplane, setAirplane] = useState(false);
   const [dnd, setDnd] = useState(false);
-  const [brightness, setBrightness] = useState(80);
+  const [brightness, setBrightness] = useState(readBrightness);
   const [volume, setVolume] = useState(65);
 
   return (
@@ -56,7 +72,14 @@ export default function ControlCenter() {
       </div>
       <div>
         <p className="text-white/70 text-[11px] font-medium mb-1 px-1">Display</p>
-        <Slider icon={Sun} value={brightness} onChange={setBrightness} />
+        <Slider
+          icon={Sun}
+          value={brightness}
+          onChange={(v) => {
+            setBrightness(v);
+            applyBrightness(v);
+          }}
+        />
       </div>
       <div>
         <p className="text-white/70 text-[11px] font-medium mb-1 px-1">Sound</p>
