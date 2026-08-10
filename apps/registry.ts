@@ -20,7 +20,7 @@ export const APPS: AppDef[] = [
   { id: 'experience', label: 'Professional Experience', iconSrc: '/app-icons/experience.png', kind: 'experience' },
   { id: 'references', label: 'References', iconSrc: '/app-icons/references.png', kind: 'references' },
   { id: 'education', label: 'Education', iconSrc: '/app-icons/education.png', kind: 'education' },
-  { id: 'news', label: 'News-to-Trade', iconSrc: '/app-icons/news.jpg', kind: 'project', project: find('News-to-Trade') },
+  { id: 'news', label: 'News-to-Trade Agent', iconSrc: '/app-icons/news.jpg', kind: 'project', project: find('News-to-Trade') },
   { id: 'grab', label: 'Grab', iconSrc: '/app-icons/grab.jpg', kind: 'project', project: find('Grab') },
   { id: 'pirate', label: 'Pirate', iconSrc: '/app-icons/pirate.png', kind: 'project', project: find('Pirate') },
   { id: 'roots', label: 'Roots', iconSrc: '/app-icons/roots.png', kind: 'project', project: find('Roots') },
