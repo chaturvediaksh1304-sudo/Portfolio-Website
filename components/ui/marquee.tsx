@@ -65,6 +65,14 @@ export function Marquee({
         }}
         onMouseEnter={() => pauseOnHover && setIsPaused(true)}
         onMouseLeave={() => pauseOnHover && setIsPaused(false)}
+        // Hold to freeze the belt; release anywhere resumes it (pointer capture
+        // keeps the release event ours even if the cursor wandered off).
+        onPointerDown={(e) => {
+          e.currentTarget.setPointerCapture(e.pointerId);
+          setIsPaused(true);
+        }}
+        onPointerUp={() => setIsPaused(false)}
+        onPointerCancel={() => setIsPaused(false)}
         {...props}
       >
         <div className={cn('marquee-scroller flex shrink-0', isVertical && 'flex-col', isPaused && 'paused')}>

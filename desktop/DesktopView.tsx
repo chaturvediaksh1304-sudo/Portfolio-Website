@@ -75,7 +75,11 @@ export default function DesktopView() {
             />
           </div>
           <div className="w-full max-w-3xl mt-2">
-            <Marquee duration={75} fadeAmount={12}>
+            <Marquee
+              duration={75}
+              fadeAmount={12}
+              className="pointer-events-auto cursor-grab active:cursor-grabbing"
+            >
               {SKILLS.map((s) => (
                 <span
                   key={s}
