@@ -128,6 +128,12 @@ export const PROJECTS: ProjectItem[] = [
     external: 'https://news-to-trade-agent.vercel.app'
   },
   {
+    title: 'Substrate — AI Research Assistant',
+    description: 'Takes a research question, ingests papers from Semantic Scholar and arXiv, and answers with citations built server-side from the retrieved chunks — so an answer can never cite a paper that isn’t in the store. Retrieval runs on locally embedded vectors in Postgres; an orchestrator delegates to workers, with graph, gap detection, and hypothesis generation next.',
+    tech: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'fastembed', 'RAG', 'Anthropic Claude', 'Docker'],
+    github: 'https://github.com/chaturvediaksh1304-sudo/substrate'
+  },
+  {
     title: 'Roots — Self-Attaching Agent Orchestration',
     description: 'A meta-layer that drops into any project: it grills you on the goal, decomposes it into non-overlapping subtasks, generates specialized subagents to run them, and synthesizes the result. Ships as a Claude Code plugin.',
     tech: ['Python', 'Multi-Agent Orchestration', 'Claude Code', 'LLM Agents'],
