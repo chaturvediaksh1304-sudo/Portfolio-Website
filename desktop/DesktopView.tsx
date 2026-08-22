@@ -13,11 +13,15 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { Marquee } from '../components/ui/marquee';
 
 const SKILLS = [
-  'Java', 'Python', 'SQL', 'PostgreSQL', 'MySQL', 'TypeScript', 'JavaScript', 'HTML', 'CSS',
-  'ETL/ELT Pipelines', 'Relational Schema Design', 'Query Optimization', 'Multi-table Joins',
-  'Algorithmic Data Modeling', 'Telemetry Processing', 'Matrix Ingestion', 'Vector Arrays',
-  'Spring Framework', 'AWS (EC2, Lambda, API Gateway)', 'Docker', 'GitHub', 'REST APIs',
-  'Data Integrity Control', 'Asynchronous Multithreading', 'Agile/Scrum', 'Infrastructure Monitoring',
+  'Swift', 'Java', 'Python', 'Go', 'SQL (PostgreSQL, MySQL)', 'TypeScript', 'JavaScript', 'HTML',
+  'CSS', 'Objective-C', 'ETL/ELT Pipelines', 'Relational Schema Design', 'Query Optimization',
+  'Multi-table Joins', 'GraphQL', 'Data Modeling', 'Telemetry Processing', 'Matrix Ingestion',
+  'Vector Arrays', 'Isolation Forest', 'SHAP', 'RAG Systems', 'LLM Fine-Tuning (Llama-3.3-70B)',
+  'AWS SageMaker', 'LangGraph', 'Multi-Agent Orchestration', 'React', 'Expo',
+  'Spring Framework (Boot, MVC)', 'FastAPI', 'REST APIs', 'WebSocket', 'CloudKit',
+  'AWS (EC2, Lambda, API Gateway, SageMaker)', 'Cloudflare Workers', 'GCP', 'Docker', 'CI/CD',
+  'Kafka', 'Redis', 'Celery', 'ChromaDB', 'Agile/Scrum', 'Asynchronous Multithreading',
+  'Data Integrity Control', 'Infrastructure Monitoring', 'pytest'
 ];
 
 const DOCK_APPS = APPS.map((a) => ({ id: a.id, name: a.label, icon: a.iconSrc }));
@@ -76,7 +80,7 @@ export default function DesktopView() {
           </div>
           <div className="w-full max-w-3xl mt-2">
             <Marquee
-              duration={75}
+              duration={135}
               fadeAmount={12}
               className="pointer-events-auto cursor-grab active:cursor-grabbing"
             >
