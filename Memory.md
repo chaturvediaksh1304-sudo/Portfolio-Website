@@ -34,8 +34,9 @@ mobile grid, and Spotlight all read `APPS`, so one entry covers all three.
 - **Brightness** in Control Center drives a full-screen black overlay in
   `App.tsx`. The level is stored on that element, not in React state, because
   Control Center unmounts when closed. It floors at 70% so the site stays visible.
-- **Icons** are mostly bitmaps; `substrate.svg` and `atmos.svg` are hand-drawn
-  all-black SVGs.
+- **Icons** are bitmaps exported from `assets/Applications Icons/`, except
+  `volt.svg`. Source artwork lives in that assets folder; `public/app-icons/`
+  holds the copies the app actually serves.
 - **Typechecking** is clean — `npx tsc --noEmit` reports no errors. Keep it that
   way; Vite uses esbuild and never typechecks, so tsc is the only thing that
   catches these. `@types/react` and `@types/react-dom` were missing at first,
