@@ -89,7 +89,21 @@ export const EXPERIENCE: ExperienceItem[] = [
     ],
     tech: ['Product Management', 'User Research', 'Canva', 'Python', 'SQL'],
     tags: ['Product', 'Research', 'Gen-Z']
-  }
+  },
+  {
+    company: 'Aeolus Consulting',
+    title: 'Software Engineering Intern',
+    url: '#',
+    start: 'July 2026',
+    end: 'Present',
+    description: [
+      'Build real-time LLM infrastructure (AWS SageMaker, Cloudflare Workers + D1) for client cold-call workflows.',
+      'Design forward-deployed automation pipelines, adapting systems to each client’s CRM and call stack.',
+      'Configure serverless webhook integrations syncing call data with CRM platforms in real time.'
+    ],
+    tech: ['AWS SageMaker', 'Cloudflare Workers', 'Cloudflare D1', 'LLM Infrastructure', 'Serverless', 'Webhooks'],
+    tags: ['LLM Infra', 'Automation', 'Integrations']
+  },
 ];
 
 export const PROJECTS: ProjectItem[] = [
