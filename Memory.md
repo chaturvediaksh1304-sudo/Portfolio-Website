@@ -36,15 +36,16 @@ mobile grid, and Spotlight all read `APPS`, so one entry covers all three.
   Control Center unmounts when closed. It floors at 70% so the site stays visible.
 - **Icons** are mostly bitmaps; `substrate.svg` and `atmos.svg` are hand-drawn
   all-black SVGs.
+- **Typechecking** is clean — `npx tsc --noEmit` reports no errors. Keep it that
+  way; Vite uses esbuild and never typechecks, so tsc is the only thing that
+  catches these. `@types/react` and `@types/react-dom` were missing at first,
+  which made TS reject `key` on every component.
 
 ## Known gaps
 
-- `tsc --noEmit` reports errors across the repo — React's JSX types aren't
-  resolving, so `key` is rejected on every component and `React` reads as an
-  unknown namespace. Vite uses esbuild and doesn't typecheck, so the app builds
-  and runs fine regardless. Not yet fixed.
-- The working tree carries iCloud duplicate files (`* 2.tsx`, `* 2.ts`). They are
-  not imported by anything.
+- The repo carries 54 tracked iCloud duplicate files (`* 2.tsx`, `* 2.ts`,
+  `* 2.png`). Nothing imports them; they are excluded from the typecheck but
+  still ship in the repo and should probably be deleted.
 - Running `npm run dev` from the iCloud-synced directory is unreliable: Vite
   reports ready but then stalls serving modules.
 
@@ -60,7 +61,7 @@ python3 scripts/update-memory.py
 
 ## Commit history
 
-69 commits, oldest first.
+70 commits, oldest first.
 
 | Date | Commit | Change |
 | --- | --- | --- |
@@ -133,3 +134,4 @@ python3 scripts/update-memory.py
 | 2026-08-20 | [`862b555`](https://github.com/chaturvediaksh1304-sudo/Portfolio-Website/commit/862b555) | Recolor the Substrate icon to all black |
 | 2026-08-21 | [`4befaa3`](https://github.com/chaturvediaksh1304-sudo/Portfolio-Website/commit/4befaa3) | Add Atmos as a dock app |
 | 2026-08-22 | [`c3d3136`](https://github.com/chaturvediaksh1304-sudo/Portfolio-Website/commit/c3d3136) | Refresh the desktop skills marquee with the current skill set |
+| 2026-08-23 | [`1fb75f8`](https://github.com/chaturvediaksh1304-sudo/Portfolio-Website/commit/1fb75f8) | Add Memory.md: project notes plus generated commit history |

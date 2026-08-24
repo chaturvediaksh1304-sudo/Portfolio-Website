@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useCallback } from 'react';
+import type { CSSProperties, PointerEvent, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
 export interface TiltCardProps {
@@ -10,8 +11,8 @@ export interface TiltCardProps {
   effect?: 'gravitate' | 'evade';
   spotlight?: boolean;
   className?: string;
-  style?: React.CSSProperties;
-  children?: React.ReactNode;
+  style?: CSSProperties;
+  children?: ReactNode;
 }
 
 export function TiltCard({
@@ -34,7 +35,7 @@ export function TiltCard({
   const dir = effect === 'evade' ? -1 : 1;
 
   const handlePointerMove = useCallback(
-    (e: React.PointerEvent) => {
+    (e: PointerEvent) => {
       const el = cardRef.current;
       if (!el) return;
       const rect = el.getBoundingClientRect();
