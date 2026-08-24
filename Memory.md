@@ -48,7 +48,11 @@ mobile grid, and Spotlight all read `APPS`, so one entry covers all three.
   `* 2.png`). Nothing imports them; they are excluded from the typecheck but
   still ship in the repo and should probably be deleted.
 - Running `npm run dev` from the iCloud-synced directory is unreliable: Vite
-  reports ready but then stalls serving modules.
+  reports ready, then stalls indefinitely serving modules, so the page never
+  mounts. The fix is to get off iCloud entirely — copy the sources to local
+  disk, run `npm install` there so `node_modules` is local too, and serve from
+  that copy. A symlinked `node_modules` is not enough; the dependency reads are
+  what stall.
 
 ## Updating this file
 

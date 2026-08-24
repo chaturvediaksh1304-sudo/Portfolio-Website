@@ -27,7 +27,7 @@ export const APPS: AppDef[] = [
   { id: 'pirate', label: 'Pirate', iconSrc: '/app-icons/pirate.png', kind: 'project', project: find('Pirate') },
   { id: 'roots', label: 'Roots', iconSrc: '/app-icons/roots.png', kind: 'project', project: find('Roots') },
   { id: 'vaultscan', label: 'VaultScan', iconSrc: '/app-icons/vaultscan.png', kind: 'project', project: find('VaultScan') },
-  { id: 'volt', label: 'Volt Engineering', iconSrc: '/app-icons/volt.svg', kind: 'project', project: find('Volt') },
+  { id: 'volt', label: 'Volt Engineering', iconSrc: '/app-icons/volt.png', kind: 'project', project: find('Volt') },
   {
     id: 'llmgateway',
     label: 'LLM Gateway',
