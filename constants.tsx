@@ -148,6 +148,12 @@ export const PROJECTS: ProjectItem[] = [
     github: 'https://github.com/chaturvediaksh1304-sudo/substrate'
   },
   {
+    title: 'Agent Orchestration System',
+    description: 'A supervisor decomposes a goal, designs a subagent for each subtask at runtime, and dispatches them concurrently to Celery workers over Redis. Runs and agent configs persist to PostgreSQL with conversation memory in ChromaDB; failing subagents diagnose themselves and retry, and whatever self-repair can’t rescue escalates to a human.',
+    tech: ['Python', 'Celery', 'Redis', 'PostgreSQL', 'ChromaDB', 'Anthropic Claude', 'OpenAI', 'Docker'],
+    github: 'https://github.com/chaturvediaksh1304-sudo/agent-orchestration-system'
+  },
+  {
     title: 'Roots — Self-Attaching Agent Orchestration',
     description: 'A meta-layer that drops into any project: it grills you on the goal, decomposes it into non-overlapping subtasks, generates specialized subagents to run them, and synthesizes the result. Ships as a Claude Code plugin.',
     tech: ['Python', 'Multi-Agent Orchestration', 'Claude Code', 'LLM Agents'],
