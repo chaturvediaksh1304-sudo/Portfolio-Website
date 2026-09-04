@@ -154,6 +154,12 @@ export const PROJECTS: ProjectItem[] = [
     github: 'https://github.com/chaturvediaksh1304-sudo/agent-orchestration-system'
   },
   {
+    title: 'Bridge Buddies',
+    description: 'An iOS app pairing university students — domestic and international — for low-pressure, in-person connection based on shared interests, comfort levels and social pace. SwiftUI with no third-party UI libraries: every colour, type ramp and radius lives in a design-system layer, and screens carry no styling of their own.',
+    tech: ['Swift', 'SwiftUI', 'iOS', 'Design Systems', 'Python'],
+    github: 'https://github.com/chaturvediaksh1304-sudo/bridge-buddies'
+  },
+  {
     title: 'Roots — Self-Attaching Agent Orchestration',
     description: 'A meta-layer that drops into any project: it grills you on the goal, decomposes it into non-overlapping subtasks, generates specialized subagents to run them, and synthesizes the result. Ships as a Claude Code plugin.',
     tech: ['Python', 'Multi-Agent Orchestration', 'Claude Code', 'LLM Agents'],

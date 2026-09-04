@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bbCanvas" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#F4E0AC"/>
+      <stop offset="100%" stop-color="#D6DDC6"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bbCanvas)"/>
+  <!-- A span between two people: the bridge the app is named for. -->
+  <path d="M 116 330 C 116 214, 396 214, 396 330" fill="none" stroke="#8E9E6E"
+        stroke-width="24" stroke-linecap="round"/>
+  <g fill="none" stroke="#10120C" stroke-width="16" stroke-linecap="round">
+    <path d="M 168 330 L 168 386"/>
+    <path d="M 256 300 L 256 386"/>
+    <path d="M 344 330 L 344 386"/>
+  </g>
+  <circle cx="168" cy="212" r="40" fill="#10120C"/>
+  <circle cx="344" cy="212" r="40" fill="#10120C"/>
+</svg>

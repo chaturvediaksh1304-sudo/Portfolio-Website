@@ -24,6 +24,7 @@ export const APPS: AppDef[] = [
   { id: 'substrate', label: 'Substrate', iconSrc: '/app-icons/substrate.png', kind: 'project', project: find('Substrate') },
   { id: 'atmos', label: 'Atmos', iconSrc: '/app-icons/atmos.png', kind: 'project', project: find('Atmos') },
   { id: 'orchestration', label: 'Agent Orchestration System', iconSrc: '/app-icons/orchestration.png', kind: 'project', project: find('Agent Orchestration System') },
+  { id: 'bridgebuddies', label: 'Bridge Buddies', iconSrc: '/app-icons/bridgebuddies.svg', kind: 'project', project: find('Bridge Buddies') },
   { id: 'grab', label: 'Grab', iconSrc: '/app-icons/grab.jpg', kind: 'project', project: find('Grab') },
   { id: 'pirate', label: 'Pirate', iconSrc: '/app-icons/pirate.png', kind: 'project', project: find('Pirate') },
   { id: 'roots', label: 'Roots', iconSrc: '/app-icons/roots.png', kind: 'project', project: find('Roots') },
